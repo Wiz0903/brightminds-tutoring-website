@@ -102,6 +102,13 @@ input, input::placeholder, textarea {
   display: inline-block;
 }
 
+@media (max-width: 600px) {
+  .submit, .reset {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
 .submit {
   background-color: blue;
 }
