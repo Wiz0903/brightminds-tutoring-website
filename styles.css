@@ -1,0 +1,222 @@
+header {
+    text-align: center;
+    background-color: navy;
+    color: white;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    color: teal;
+}
+
+html {
+  font-size: 16px;
+  background-color: white; 
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2rem;    
+}
+
+h2 {
+  font-size: 1.5rem; 
+  color: navy;
+}
+
+h3 {
+  font-size: 1.25rem; 
+  color: navy;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2b2d42;
+  transition: transform 0.3s;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+}
+
+.tutor-profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+
+    background-color: #ffffff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 600px) {
+    .tutor-profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.tutor-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.tutor-name {
+    margin: 0;
+    color: navy;
+    font-size: 1.3rem;
+}
+
+.tutor-subjects {
+    margin-top: 0.5rem;
+    color: darkslategray;
+}
+
+p, li {
+  font-size: 1rem;     
+}
+
+p {
+    color: darkgray;
+}
+
+li {
+    color: darkgray;
+}
+
+li::marker {
+    color: teal;
+}
+
+section {
+  margin-bottom: 2rem; 
+  padding: 1.5rem 1rem;
+}
+
+section + section {
+  border-top: 1px solid lightgray;
+}
+
+a {
+    text-decoration: none;
+    color: lightblue;
+}
+
+a:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0;
+    padding: 1rem;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+nav a {
+    color: navy;
+    font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: none;
+    color: teal;
+}
+
+#contact-form-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: navy;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+#contact-form-button:hover {
+    background-color: teal;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    color: darkgray;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 60vh;
+    padding: 2rem;
+
+    background: linear-gradient(to right, navy, teal);
+    color: white;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: white;
+    color: navy;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    transform: scale(1.05);
+    background-color: #e6e6e6;
+    text-decoration: none;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 1rem;
+}

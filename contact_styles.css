@@ -1,0 +1,119 @@
+body {
+    background-color: lightgray;
+    color: darkslategray;
+}
+
+.contact-form {
+  background-color: white;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 10px 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.center {
+    text-align: center;
+}
+
+h1 {
+    color: navy;
+}
+
+.description {
+  font-size: 1.2rem;
+}
+
+fieldset {
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+fieldset legend {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+label:not(.contact-method) {
+  display: block;
+  margin: 10px 0;
+}
+
+input:not(.contact-method-radio-btn), textarea {
+  background-color: #ffffff1a;
+  width: 95%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#submit, #reset  {
+    margin-top: 12px;
+    margin-right: 4px;
+    color: white;
+    border-radius: 4px;
+    padding: 10px 20px;
+    border: none;
+}
+
+input, input::placeholder, textarea {
+  color: #1f2937;
+}
+
+.contact-method-radio-btn {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid gray;
+  vertical-align: bottom;
+}
+
+.contact-method-radio-btn::before {
+  display: block;
+  content: " ";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(3px, 3px) scale(0);
+  transition: all 0.3s ease-in;
+}
+
+.contact-method-radio-btn:checked::before {
+  transform: translate(3px, 3px) scale(1);
+  background-color: teal;
+}
+
+.submit, .reset {
+  cursor: pointer;
+  color: whitesmoke;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  margin: auto;
+  display: inline-block;
+}
+
+.submit {
+  background-color: blue;
+}
+
+.reset {
+  background-color: teal;
+}
+
+.submit:hover {
+  background-color: darkblue;
+}
+
+.reset:hover {
+  background-color: royalblue;
+}
