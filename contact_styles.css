@@ -106,7 +106,13 @@ input, input::placeholder, textarea {
   .submit, .reset {
     width: 100%;
     margin: 10px 0;
-    display: flex;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-form {
+    width: 95%;
+    padding: 10px;
   }
 }
 
