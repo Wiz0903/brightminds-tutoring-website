@@ -220,3 +220,57 @@ footer {
     border-radius: 50%;
     margin-right: 1rem;
 }
+
+@media (max-width: 600px) {
+    .logo {
+        margin: 0 auto 1rem;
+    }
+}
+
+
+.navigation {
+    display: flex;
+    gap: 15px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+
+        padding: 20px 0;
+
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+
+        transition: all 0.3s ease;
+    }
+
+    .navigation.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
