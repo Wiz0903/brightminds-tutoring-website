@@ -242,10 +242,22 @@ footer {
 }
 
 .overlay {
-        visibility: hidden;
-        opacity: 0;
-        pointer-events: none;
-    }
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.close-menu {
+    visibility: hidden;
+    opacity: 0;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
 
 @media (max-width: 600px) {
 
@@ -305,5 +317,10 @@ footer {
 
     .no-scroll {
         overflow: hidden;
+    }
+
+    .close-menu {
+        visibility: visible;
+        opacity: 1;
     }
 }
