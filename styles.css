@@ -221,6 +221,15 @@ footer {
     margin-right: 1rem;
 }
 
+#subject-search {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 @media (max-width: 600px) {
     .logo {
         margin: 0 auto 1rem;
