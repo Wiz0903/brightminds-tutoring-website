@@ -4,6 +4,7 @@ const emailInput = document.getElementById('parent-email');
 const emailMessage = document.querySelector('.email-message');
 const requiredFields = document.querySelectorAll("[required]")
 const progressPercent = document.querySelector('.progress-percent');
+const submitButton = document.querySelector('.submit');
 
 textArea.addEventListener('input', () => {
     characterCount.textContent = textArea.value.length;
@@ -57,7 +58,14 @@ const calculateProgress = () => {
         }
     });
 
-    progressPercent.textContent = Math.round((completed / totalRequiredFields) * 100);
+    const progress = Math.round((completed / totalRequiredFields) * 100);
+    progressPercent.textContent = progress;
+
+    if (progress === 100) {
+        submitButton.disabled = false;
+    } else {
+        submitButton.disabled = true;
+    }
 };
 
 requiredFields.forEach(field => {
