@@ -139,43 +139,59 @@ input, input::placeholder, textarea {
 }
 
 #parent-email.valid {
-    border: 2px solid green;
+  border: 2px solid green;
 }
 
 #parent-email.invalid {
-    border: 2px solid red;
+  border: 2px solid red;
 }
 
 
 .email-message {
-    font-size: 0.9rem;
-    margin-top: 5px;
-    min-height: 20px; 
+  font-size: 0.9rem;
+  margin-top: 5px;
+  min-height: 20px; 
 }
 
 .email-message.valid {
-    color: green;
+  color: green;
 }
 
 .email-message.valid::before {
-    content: "✅ ";
+  content: "✅ ";
 }
 
 .email-message.invalid {
-    color: red;
+  color: red;
 }
 
 .email-message.invalid::before {
-    content: "⚠️ ";
+  content: "⚠️ ";
 }
 
 .progress {
-    font-size: 1rem;
-    margin-top: 10px;
-    text-align: center;
+  font-size: 1rem;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .submit:disabled {
-    background-color: gray;
-    cursor: not-allowed;
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.success-message {
+  font-size: 1.2rem;
+  color: green;
+  text-align: center;
+  margin-top: 20px;
+  display: none;
+}
+
+.success-message.show {
+  display: block;
+}
+
+.contact-form.hide {
+  display: none;
 }
