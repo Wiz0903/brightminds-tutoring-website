@@ -174,3 +174,8 @@ input, input::placeholder, textarea {
     margin-top: 10px;
     text-align: center;
 }
+
+.submit:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
