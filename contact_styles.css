@@ -131,3 +131,46 @@ input, input::placeholder, textarea {
 .reset:hover {
   background-color: royalblue;
 }
+
+.character-length {
+  font-size: 0.9rem;
+  color: gray;
+  margin-top: 5px;
+}
+
+#parent-email.valid {
+    border: 2px solid green;
+}
+
+#parent-email.invalid {
+    border: 2px solid red;
+}
+
+
+.email-message {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    min-height: 20px; 
+}
+
+.email-message.valid {
+    color: green;
+}
+
+.email-message.valid::before {
+    content: "✅ ";
+}
+
+.email-message.invalid {
+    color: red;
+}
+
+.email-message.invalid::before {
+    content: "⚠️ ";
+}
+
+.progress {
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+}
