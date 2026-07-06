@@ -5,6 +5,9 @@ const emailMessage = document.querySelector('.email-message');
 const requiredFields = document.querySelectorAll("[required]")
 const progressPercent = document.querySelector('.progress-percent');
 const submitButton = document.querySelector('.submit');
+const body = document.body;
+const form = document.querySelector('.contact-form');
+const successMessage = document.querySelector('.success-message');
 
 textArea.addEventListener('input', () => {
     characterCount.textContent = textArea.value.length;
@@ -73,3 +76,9 @@ requiredFields.forEach(field => {
 });
 
 calculateProgress();
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    form.classList.add('hide');
+    successMessage.classList.add('show');
+});
