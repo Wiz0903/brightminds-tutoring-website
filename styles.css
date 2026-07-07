@@ -271,6 +271,9 @@ footer {
 @media (max-width: 600px) {
 
     .menu-toggle {
+        position: fixed;
+        top: 15px;
+        right: 15px;
         display: block;
     }
 
@@ -294,6 +297,14 @@ footer {
         visibility: hidden;
 
         transition: all 0.3s ease;
+    }
+
+    .navigation a.highlight {
+        color: teal;
+        font-weight: bold;
+        background-color: rgba(0, 128, 128, 0.1);
+        border-radius: 5px;
+        border: 1px solid teal;
     }
 
     .navigation.active {
