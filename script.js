@@ -6,6 +6,7 @@ const body = document.querySelector('body');
 const closeMenuButton = document.querySelector('.close-menu');
 const subjectSearchInput = document.getElementById('subject-search');
 const subjectListItems = document.querySelectorAll('#subjects-offered ul li');
+const sections = document.querySelectorAll('section');
 
 const toggleMenu = () => {
     navigation.classList.toggle('active');
@@ -48,3 +49,24 @@ function filterSubjects() {
         }
     });
 }
+
+window.addEventListener('scroll', () => {
+    navLinks.forEach(navLink => {
+        navLink.classList.remove('highlight');
+    });
+
+    sections.forEach(section => {
+        const sectionTopBoundary = section.getBoundingClientRect().top;
+
+        if (sectionTopBoundary > -50 && sectionTopBoundary < 200) {
+            navLinks.forEach(navLink => {
+                const sectionId = section.id;
+                const link = navLink.getAttribute('href').replace('#', '');
+
+                if (link === sectionId) {
+                    navLink.classList.add('highlight');
+                }
+            });
+        }
+    });
+});
