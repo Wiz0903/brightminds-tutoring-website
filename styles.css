@@ -343,6 +343,10 @@ footer {
         visibility: visible;
         opacity: 1;
     }
+
+    .top-button {
+        right: 50vw;
+    }
 }
 
 .top-button {
