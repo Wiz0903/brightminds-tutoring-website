@@ -10,6 +10,8 @@ const sections = document.querySelectorAll('section');
 const topButton = document.querySelector('.top-button');
 const detailsButtons = document.querySelectorAll('.details-button');
 const questionButtons = document.querySelectorAll('.question');
+const months = document.getElementById('months');
+const amount = document.querySelector('.amount');
 
 const toggleMenu = () => {
     navigation.classList.toggle('active');
@@ -116,4 +118,9 @@ questionButtons.forEach(questionButton => {
         answers.classList.toggle('expanded');
         questionButton.classList.toggle('expanded');
     });
+});
+
+months.addEventListener('input', () => {
+    const totalCost = 200 * months.value;
+    amount.textContent = totalCost;
 });
