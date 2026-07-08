@@ -9,6 +9,7 @@ const subjectListItems = document.querySelectorAll('#subjects-offered ul li');
 const sections = document.querySelectorAll('section');
 const topButton = document.querySelector('.top-button');
 const detailsButtons = document.querySelectorAll('.details-button');
+const questionButtons = document.querySelectorAll('.question');
 
 const toggleMenu = () => {
     navigation.classList.toggle('active');
@@ -99,8 +100,20 @@ detailsButtons.forEach(detailsButton => {
         if (tutorDetails.classList.contains('expanded')) {
             detailsButton.textContent = "Show Less";
         } else {
-            detailsButton.textContent = "Click to Learn More";
+            detailsButton.textContent = "Learn More";
         }
 
+    });
+});
+
+questionButtons.forEach(questionButton => {
+    questionButton.addEventListener('click', () => {
+
+        const faqCard = questionButton.closest('.faq-item');
+
+        const answers = faqCard.querySelector('.answer');
+
+        answers.classList.toggle('expanded');
+        questionButton.classList.toggle('expanded');
     });
 });
