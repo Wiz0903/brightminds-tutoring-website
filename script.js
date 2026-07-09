@@ -12,6 +12,8 @@ const detailsButtons = document.querySelectorAll('.details-button');
 const questionButtons = document.querySelectorAll('.question');
 const months = document.getElementById('months');
 const amount = document.querySelector('.amount');
+const subjectSelector = document.getElementById('subjects');
+const tutorCards = document.querySelectorAll('.tutor-profile');
 
 const toggleMenu = () => {
     navigation.classList.toggle('active');
@@ -123,4 +125,22 @@ questionButtons.forEach(questionButton => {
 months.addEventListener('input', () => {
     const totalCost = 200 * months.value;
     amount.textContent = totalCost;
+});
+
+subjectSelector.addEventListener('change', () => {
+    if (subjectSelector.value === 'All Subjects') {
+        tutorCards.forEach(tutorCard => {
+            tutorCard.classList.remove('hide');
+        });
+    } else {
+        tutorCards.forEach(tutorCard => {
+            const tutorSubjects = tutorCard.querySelector('.tutor-subjects');
+
+            if (tutorSubjects.textContent.includes(subjectSelector.value)) {
+                tutorCard.classList.remove('hide');
+            } else {
+                tutorCard.classList.add('hide');
+            }
+        });
+    } 
 });
