@@ -4,16 +4,26 @@ const overlay = document.querySelector('.overlay');
 const navLinks = document.querySelectorAll('.navigation a');
 const body = document.querySelector('body');
 const closeMenuButton = document.querySelector('.close-menu');
+
 const subjectSearchInput = document.getElementById('subject-search');
 const subjectListItems = document.querySelectorAll('#subjects-offered ul li');
+
 const sections = document.querySelectorAll('section');
 const topButton = document.querySelector('.top-button');
+
 const detailsButtons = document.querySelectorAll('.details-button');
 const questionButtons = document.querySelectorAll('.question');
+
 const months = document.getElementById('months');
 const amount = document.querySelector('.amount');
+
 const subjectSelector = document.getElementById('subjects');
 const tutorCards = document.querySelectorAll('.tutor-profile');
+
+const statsNumbers = document.querySelectorAll('.stats-numbers');
+const statsSection = document.getElementById('statistics');
+
+const switchModeButton = document.querySelector(".switch-mode");
 
 const toggleMenu = () => {
     navigation.classList.toggle('active');
@@ -57,7 +67,7 @@ function filterSubjects() {
     });
 }
 
-window.addEventListener('scroll', () => {
+const highlightNavigation = () => {
     navLinks.forEach(navLink => {
         navLink.classList.remove('highlight');
     });
@@ -76,12 +86,57 @@ window.addEventListener('scroll', () => {
             });
         }
     });
+}
 
+const showBackToTopButton = () => {
     if (window.scrollY > 300) {
         topButton.classList.add('show');
     } else {
         topButton.classList.remove('show');
     }
+}
+
+let hasAnimated = false;
+
+const animateStatistics = () => {
+
+    if (hasAnimated) return;
+
+    const statsSectionTop = statsSection.getBoundingClientRect().top;
+
+    if (statsSectionTop > -100 && statsSectionTop < 200) {
+
+        hasAnimated = true;
+
+        statsNumbers.forEach(statsNumber => {
+
+            let startNumber = 0;
+            const targetNumber = Number(statsNumber.dataset.target);
+
+            const timer = setInterval(() => {
+
+                startNumber++;
+
+                statsNumber.textContent = startNumber;
+
+                if (startNumber >= targetNumber) {
+                    clearInterval(timer);
+                }
+
+            }, 20);
+
+        });
+
+    }
+
+};
+
+window.addEventListener('scroll', () => {
+    highlightNavigation();
+
+    showBackToTopButton();
+
+    animateStatistics();
 });
 
 
@@ -143,4 +198,14 @@ subjectSelector.addEventListener('change', () => {
             }
         });
     } 
+});
+
+switchModeButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+        switchModeButton.textContent = "☀️ Light Mode";
+    } else {
+        switchModeButton.textContent = "🌙 Dark Mode";
+    }
 });
