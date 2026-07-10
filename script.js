@@ -205,7 +205,14 @@ switchModeButton.addEventListener('click', () => {
 
     if (body.classList.contains('dark-mode')) {
         switchModeButton.textContent = "☀️ Light Mode";
+        localStorage.setItem('theme', 'dark');
     } else {
         switchModeButton.textContent = "🌙 Dark Mode";
+        localStorage.setItem('theme', 'light');
     }
 });
+
+if (localStorage.getItem ('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    switchModeButton.textContent = "☀️ Light Mode";
+}
