@@ -461,3 +461,58 @@ h4 {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stats-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1 1 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.stats-numbers {
+    font-size: 2rem;
+    color: navy;
+    font-weight: bold;
+}
+
+.switch-mode {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: navy;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1002; 
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+
+    .tutor-profile {
+        background-color: #1e1e1e;
+        border-color: #333;
+    }
+
+    .hero {
+        background: linear-gradient(to right, #1e1e1e, #333);
+    }
+
+    .stats-card {
+        background-color: #1e1e1e;
+        color: #e0e0e0;
+    }
+}
