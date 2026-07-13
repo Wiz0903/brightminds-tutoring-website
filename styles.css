@@ -516,3 +516,46 @@ body.dark-mode {
         color: #e0e0e0;
     }
 }
+
+#tutor-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1003; 
+    display: none; 
+}
+
+#tutor-popup.show {
+    display: block;
+}
+
+.profile-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.popup-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.popup-subjects, .popup-experience, .popup-style, .popup-favourite, .popup-number, .popup-email {
+    margin: 5px 0;
+}
