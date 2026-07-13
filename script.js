@@ -12,6 +12,7 @@ const sections = document.querySelectorAll('section');
 const topButton = document.querySelector('.top-button');
 
 const detailsButtons = document.querySelectorAll('.details-button');
+
 const questionButtons = document.querySelectorAll('.question');
 
 const months = document.getElementById('months');
@@ -24,6 +25,17 @@ const statsNumbers = document.querySelectorAll('.stats-numbers');
 const statsSection = document.getElementById('statistics');
 
 const switchModeButton = document.querySelector(".switch-mode");
+
+const tutorPopup = document.getElementById('tutor-popup');
+const popupPhoto = document.querySelector('.popup-photo');
+const popupName = document.querySelector('.popup-name');
+const popupSubjects = document.querySelector('.popup-subjects');
+const popupExperience = document.querySelector('.popup-experience');
+const popupStyle = document.querySelector('.popup-style');
+const popupFavourite = document.querySelector('.popup-favourite');
+const popupNumber = document.querySelector('.popup-number');
+const popupEmail = document.querySelector('.popup-email');
+const profileCloseButton = document.querySelector('.profile-close-button');
 
 const toggleMenu = () => {
     navigation.classList.toggle('active');
@@ -147,24 +159,6 @@ topButton.addEventListener('click', () => {
     });
 });
 
-detailsButtons.forEach(detailsButton => {
-    detailsButton.addEventListener('click', () => {
-
-        const tutorCard = detailsButton.closest('.tutor-info');
-
-        const tutorDetails = tutorCard.querySelector('.tutor-details');
-
-        tutorDetails.classList.toggle('expanded');
-
-        if (tutorDetails.classList.contains('expanded')) {
-            detailsButton.textContent = "Show Less";
-        } else {
-            detailsButton.textContent = "Learn More";
-        }
-
-    });
-});
-
 questionButtons.forEach(questionButton => {
     questionButton.addEventListener('click', () => {
 
@@ -216,3 +210,52 @@ if (localStorage.getItem ('theme') === 'dark') {
     body.classList.add('dark-mode');
     switchModeButton.textContent = "☀️ Light Mode";
 }
+
+const tutors = [
+    {
+        id: 1,
+        photo: 'images/Myself.jpg',
+        name: 'Tshokolo Ntho',
+        subjects: ['English', 'Natural Science', 'Natural Science and Technology', 'Mathematics', 'Technical Mathematics', 'Computer Applications Technology', 'Information Technology'],
+        experience: 'I have been tutoring at BrightMinds for the past six months, helping learners strengthen their understanding of key concepts and build confidence in their academic abilities. During this time, I have worked with learners across different grades, supporting them in developing problem-solving skills and preparing for assessments.',
+        teachingStyle: "I believe that the best way to understand a learner's strengths and areas for improvement is through regular practice using tests and past examination papers. This approach helps me identify topics that learners have mastered as well as those that require additional attention. I then provide focused guidance and explanations to help learners improve their understanding and performance.",
+        favouriteSubject: 'Mathematics is my favourite subject because it encourages logical thinking, problem-solving, and persistence. I enjoy helping learners break down challenging problems into manageable steps and seeing their confidence grow as they develop their mathematical skills.',
+        phone: '068 268 3275',
+        email: 'tshokolontho3@gmail.com'
+    },
+
+    {
+        id: 3,
+        photo: 'images/Kopanang_Lenkoe.jpg',
+        name: 'Kopanang Lenkoe',
+        subjects: ['Sesotho', 'Economics', 'Economic Management Sciences', 'Mathematics Literacy', 'Business Studies', 'Accounting', 'Life Orientation', 'Life Skills'],
+        experience: 'I have been tutoring at BrightMinds for the past six months, helping learners strengthen their understanding of key concepts and build confidence in their academic abilities. During this time, I have worked with learners across different grades, supporting them in developing problem-solving skills and preparing for assessments.',
+        teachingStyle: "I believe that the best way to understand a learner's strengths and areas for improvement is through regular practice using tests and past examination papers. This approach helps me identify topics that learners have mastered as well as those that require additional attention. I then provide focused guidance and explanations to help learners improve their understanding and performance.",
+        favouriteSubject: 'Sesotho is my favourite subject because it allows me to connect with learners on a cultural level and help them express themselves effectively.',
+        phone: '068 268 3275',
+        email: 'kopananglenkoe@gmail.com'
+    }
+];
+
+detailsButtons.forEach(detailsButton => {
+    detailsButton.addEventListener('click', () => {
+        const currentTutor = tutors.find(tutor => tutor.id == detailsButton.id);
+
+        popupPhoto.src =currentTutor.photo;
+        popupName.textContent = currentTutor.name;
+        popupSubjects.textContent = currentTutor.subjects.join(", ");
+        popupExperience.textContent = currentTutor.experience;
+        popupStyle.textContent = currentTutor.teachingStyle;
+        popupFavourite.textContent = currentTutor.favouriteSubject;
+        popupNumber.textContent = currentTutor.phone;
+        popupEmail.textContent = currentTutor.email;
+
+        tutorPopup.classList.add('show');
+        body.classList.toggle('no-scroll');
+    });
+});
+
+profileCloseButton.addEventListener('click', () => {
+    tutorPopup.classList.remove('show');
+    body.classList.remove('no-scroll');
+});
