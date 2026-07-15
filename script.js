@@ -37,6 +37,11 @@ const popupNumber = document.querySelector('.popup-number');
 const popupEmail = document.querySelector('.popup-email');
 const profileCloseButton = document.querySelector('.profile-close-button');
 
+const timerDay = document.querySelector('.timer-day');
+const timerHour = document.querySelector('.timer-hour');
+const timerMinute = document.querySelector('.timer-minute');
+const timerSecond = document.querySelector('.timer-second');
+
 const toggleMenu = () => {
     navigation.classList.toggle('active');
     overlay.classList.toggle('active');
@@ -216,7 +221,7 @@ const tutors = [
         id: 1,
         photo: 'images/Myself.jpg',
         name: 'Tshokolo Ntho',
-        subjects: ['English', 'Natural Science', 'Natural Science and Technology', 'Mathematics', 'Technical Mathematics', 'Computer Applications Technology', 'Information Technology'],
+        subjects: ['English', 'Natural Science', 'Natural Science and Technology', 'Technology', 'Mathematics', 'Technical Mathematics', 'Physical Science', 'Computer Applications Technology', 'Information Technology'],
         experience: 'I have been tutoring at BrightMinds for the past six months, helping learners strengthen their understanding of key concepts and build confidence in their academic abilities. During this time, I have worked with learners across different grades, supporting them in developing problem-solving skills and preparing for assessments.',
         teachingStyle: "I believe that the best way to understand a learner's strengths and areas for improvement is through regular practice using tests and past examination papers. This approach helps me identify topics that learners have mastered as well as those that require additional attention. I then provide focused guidance and explanations to help learners improve their understanding and performance.",
         favouriteSubject: 'Mathematics is my favourite subject because it encourages logical thinking, problem-solving, and persistence. I enjoy helping learners break down challenging problems into manageable steps and seeing their confidence grow as they develop their mathematical skills.',
@@ -225,14 +230,26 @@ const tutors = [
     },
 
     {
+        id: 2,
+        photo: 'images/Lucia_Lebetsa.jpg',
+        name: 'Lucia Lebetsa',
+        subjects: ['English', 'Sesotho', 'Accounting', 'Mathematics Literacy', 'Business Studies', 'Economic Management Sciences', 'Economics'],
+        experience: 'I have been tutoring at BrightMinds for the past six months, helping learners strengthen their understanding of key concepts and build confidence in their academic abilities. During this time, I have worked with learners across different grades, supporting them in developing problem-solving skills and preparing for assessments.',
+        teachingStyle: "I like interacting with learners and helping them build their knownedge.",
+        favouriteSubject: 'Economics',
+        phone: '076 755 7914',
+        email: 'lebetsalucia36@gmail.com'
+    },
+
+    {
         id: 3,
         photo: 'images/Kopanang_Lenkoe.jpg',
         name: 'Kopanang Lenkoe',
-        subjects: ['Sesotho', 'Economics', 'Economic Management Sciences', 'Mathematics Literacy', 'Business Studies', 'Accounting', 'Life Orientation', 'Life Skills'],
-        experience: 'I have been tutoring at BrightMinds for the past six months, helping learners strengthen their understanding of key concepts and build confidence in their academic abilities. During this time, I have worked with learners across different grades, supporting them in developing problem-solving skills and preparing for assessments.',
-        teachingStyle: "I believe that the best way to understand a learner's strengths and areas for improvement is through regular practice using tests and past examination papers. This approach helps me identify topics that learners have mastered as well as those that require additional attention. I then provide focused guidance and explanations to help learners improve their understanding and performance.",
-        favouriteSubject: 'Sesotho is my favourite subject because it allows me to connect with learners on a cultural level and help them express themselves effectively.',
-        phone: '068 268 3275',
+        subjects: ['Economics', 'Economic Management Sciences', 'Business Studies', 'Accounting'],
+        experience: 'I have been tutoring at BrightMinds for the past 3 months, helping learners strengthen their understanding of key concepts and build confidence in their academic abilities. During this time, I have worked with learners across different grades, supporting them in developing problem-solving skills and preparing for assessments.',
+        teachingStyle: "One-on-one interaction, delivering and building knowledge.",
+        favouriteSubject: 'Economics.',
+        phone: '076 288 8984',
         email: 'kopananglenkoe@gmail.com'
     }
 ];
@@ -259,3 +276,64 @@ profileCloseButton.addEventListener('click', () => {
     tutorPopup.classList.remove('show');
     body.classList.remove('no-scroll');
 });
+
+const updateCountDown = () => {
+    const today = new Date();
+    const sessions = [
+        {day: 1, hour: 16, minute: 0},
+        {day: 2, hour: 16, minute: 0},
+        {day: 3, hour: 16, minute: 0},
+        {day: 4, hour: 16, minute: 0},
+        {day: 5, hour: 16, minute: 0}
+    ]
+
+    let nextSession;
+    for (const session of sessions) {
+        if (today.getDay() === session.day) {
+            if (session.hour > today.getHours()) {
+                nextSession = session;
+                break;
+                } else if (session.hour === today.getHours()) {
+                    if (session.minute > today.getMinutes()) {
+                        nextSession = session;
+                        break;
+                        
+                } 
+            }
+        } else if (session.day > today.getDay()) {
+            nextSession = session;
+            break;
+        }
+    };
+
+    if (nextSession === undefined) {
+        nextSession = sessions[0];
+    }
+
+    const sessionDate = new Date(today); 
+
+    let daysAhead = nextSession.day - today.getDay();
+    if (daysAhead < 0) {
+        daysAhead += 7;
+    }
+
+    sessionDate.setDate(sessionDate.getDate() + daysAhead);
+    sessionDate.setHours(nextSession.hour);
+    sessionDate.setMinutes(nextSession.minute);
+    sessionDate.setSeconds(0);
+    sessionDate.setMilliseconds(0);
+
+    const difference = sessionDate - today;
+
+    const days = Math.floor(difference / 86400000);
+    const hours = Math.floor((difference % 86400000) / 3600000);
+    const minutes = Math.floor((difference % 3600000) / 60000);
+    const seconds = Math.floor((difference % 60000) / 1000);
+
+    timerDay.textContent = days.toString().padStart(2, '0');
+    timerHour.textContent = hours.toString().padStart(2, '0');
+    timerMinute.textContent = minutes.toString().padStart(2, '0');
+    timerSecond.textContent = seconds.toString().padStart(2, '0');
+}
+
+const sessionTimer = setInterval(updateCountDown, 1000);
