@@ -234,9 +234,9 @@ const tutors = [
         photo: 'images/Lucia_Lebetsa.jpg',
         name: 'Lucia Lebetsa',
         subjects: ['English', 'Sesotho', 'Accounting', 'Mathematics Literacy', 'Business Studies', 'Economic Management Sciences', 'Economics'],
-        experience: 'I have been tutoring at BrightMinds for the past six months, helping learners strengthen their understanding of key concepts and build confidence in their academic abilities. During this time, I have worked with learners across different grades, supporting them in developing problem-solving skills and preparing for assessments.',
+        experience: 'I have been tutoring at BrightMinds for the past 10 months, helping learners strengthen their understanding of key concepts and build confidence in their academic abilities. During this time, I have worked with learners across different grades, supporting them in developing problem-solving skills and preparing for assessments.',
         teachingStyle: "I like interacting with learners and helping them build their knownedge.",
-        favouriteSubject: 'Economics',
+        favouriteSubject: 'Economics is my favourite subject because it provides insights into how societies allocate resources and make decisions. I enjoy exploring economic theories and concepts, analyzing real-world scenarios, and helping learners understand the impact of economic policies on individuals and communities.',
         phone: '076 755 7914',
         email: 'lebetsalucia36@gmail.com'
     },
@@ -248,7 +248,7 @@ const tutors = [
         subjects: ['Economics', 'Economic Management Sciences', 'Business Studies', 'Accounting'],
         experience: 'I have been tutoring at BrightMinds for the past 3 months, helping learners strengthen their understanding of key concepts and build confidence in their academic abilities. During this time, I have worked with learners across different grades, supporting them in developing problem-solving skills and preparing for assessments.',
         teachingStyle: "One-on-one interaction, delivering and building knowledge.",
-        favouriteSubject: 'Economics.',
+        favouriteSubject: 'Economics is my favourite subject because it provides insights into how societies allocate resources and make decisions. I enjoy exploring economic theories and concepts, analyzing real-world scenarios, and helping learners understand the impact of economic policies on individuals and communities.',
         phone: '076 288 8984',
         email: 'kopananglenkoe@gmail.com'
     }
