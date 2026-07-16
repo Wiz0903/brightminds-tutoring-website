@@ -612,3 +612,30 @@ body.dark-mode {
     color: navy;
     font-weight: bold;
 }
+
+.login-navigation {
+    display: inline-block;
+    margin-left: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: navy;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease,
+                transform 0.2s ease;
+}
+
+.login-navigation:hover {
+    background-color: #003d99;
+    transform: translateY(-2px);
+}
+
+.login-navigation:active {
+    transform: translateY(0);
+}
+
+.login-navigation:focus {
+    outline: 2px solid #66b3ff;
+    outline-offset: 3px;
+}
