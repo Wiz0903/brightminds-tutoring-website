@@ -5,19 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Dashboard | BrightMinds</title>
         <link rel="stylesheet" href="dashboard_styles.css">
+        <script src="dashboard_script.js" defer></script>
     </head>
 
     <body>
         <header>
+            <button class="sidebar-toggle" aria-label="Toggle sidebar menu">☰</button>
             <img src="images/BrightMinds_logo.jpg" alt="BrightMinds Logo" class="logo"/>
             <p>Administrator Dashboard</p>
-            <search></search>
-            <a href="">Notifications</a>
-            <p>Tutor name here.</p>
-            <a href="">Log Out</a>
+            <a href="">🔔</a>
+            <p>Administrator name here.</p>
         </header>
         
         <aside>
+            <button class="close-sidebar" aria-label="Close sidebar menu">✖</button>
             <a href="">Dashboard</a>
             <a href="">Learners</a>
             <a href="">Tutors</a>
@@ -32,7 +33,7 @@
         <main>
             <div class="stats-container">
                     <div class="stats-card">
-                        <p>Active Learners</p>
+                        <p>Total Learners</p>
                         <span 
                         class="stats-numbers"
                         data-target="10"
@@ -42,7 +43,7 @@
                     </div>
 
                     <div class="stats-card">
-                        <p>Expert Tutors</p>
+                        <p>Total Tutors</p>
                         <span 
                         class="stats-numbers"
                         data-target="3"
@@ -64,7 +65,7 @@
                     <div class="stats-card">
                         <p>Payments</p>
                         <p>R<span class="stats-numbers"
-                        data-target="10"
+                        data-target="200"
                         >
                         0
                         </span></p>
