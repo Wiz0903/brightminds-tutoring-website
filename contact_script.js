@@ -6,7 +6,8 @@ const requiredFields = document.querySelectorAll("[required]")
 const progressPercent = document.querySelector('.progress-percent');
 const submitButton = document.querySelector('.submit');
 const body = document.body;
-const form = document.querySelector('.contact-form');
+const contactForm = document.querySelector('.contact-form');
+const form = document.querySelector('.contact-form form');
 const successMessage = document.querySelector('.success-message');
 
 textArea.addEventListener('input', () => {
@@ -79,6 +80,11 @@ calculateProgress();
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    form.classList.add('hide');
-    successMessage.classList.add('show');
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+    const timeout = setTimeout(() => {
+        successMessage.classList.add('show');
+        form.reset();
+        contactForm.classList.add('hide');
+    }, 2000);
 });
