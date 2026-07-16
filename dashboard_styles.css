@@ -152,36 +152,103 @@ main {
     border-bottom: none;
 }
 
-@media (max-width: 768px) {
-
-    aside {
-        width: 200px;
-    }
-
-    main {
-        margin-left: 200px;
-    }
-
+.sidebar-toggle {
+    display: none;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    border: none;
+    background: navy;
+    color: white;
+    font-size: 1.4rem;
+    padding: .6rem .8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .3s ease;
 }
 
-@media (max-width: 600px) {
+.sidebar-toggle:hover {
+    background-color: teal;
+}
+
+.close-sidebar {
+    display: none;
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+
+    /* Header */
 
     header {
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
+
+    header search,
+    header p:last-child {
+        display: none;
+    }
+
+    /* Menu Button */
+
+    .sidebar-toggle {
+        display: block;
+    }
+
+    /* Sidebar */
+
+    aside {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 250px;
+        height: 100vh;
+        z-index: 1200;
+
+        transition: left .35s ease;
+        padding-top: 2rem;
+    }
+
+    aside.active {
+        left: 0;
+    }
+
+    .close-sidebar {
+        display: block;
+    }
+
+    /* Main */
+
+    main {
+        margin-left: 0;
+        margin-top: 90px;
         padding: 1rem;
     }
 
-    aside {
-        position: static;
-        width: 100%;
-        height: auto;
+    /* Cards */
+
+    .stats-container {
+        grid-template-columns: 1fr;
     }
 
-    main {
-        margin: 0;
-    }
+    /* Quick Actions */
 
     .quick-actions {
         flex-direction: column;
     }
 
+    .quick-actions button {
+        width: 100%;
+    }
 }
