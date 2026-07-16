@@ -13,8 +13,10 @@ const rememberCheckbox = document.getElementById('remember');
 passwordButton.addEventListener('click', () => {
     if (password.type === 'password') {
         password.type = "text";
+        passwordButton.textContent = "Hide"
     } else {
         password.type = "password";
+        passwordButton.textContent = "Show"
     }
 });
 
