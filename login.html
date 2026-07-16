@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Login | BrightMinds</title>
+        <link rel="stylesheet" href="login_styles.css">
+        <script src="login_script.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <img src="images/BrightMinds_logo.jpg" alt="BrightMinds Logo" class="logo"/>
+            <h1 class="title center">Welcome Back!</h1>
+        </header>
+        
+        <main class="login-form">
+            <form action="">
+                <label for="username">Username or Email:</label>
+                <input type="text" name="username" size="20" id="username" required/>
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" size="20" id="password" required/>
+                <button type="button" class="show-password" aria-label="Show or Hide Password">👁</button>
+
+                <input
+                    id="remember"
+                    class="remember-checkbox-btn"
+                    type="checkbox"
+                    name="remember-method"
+                    value="remember"
+                />
+                <label class="remember-method" for="remember">Remember Me</label>
+
+                <a class="forgot-password" href="forgot-password.html" aria-label="Forgot Password">Forgot Password?</a>
+
+                <button class="login" aria-label="Log In">Log In</button>
+
+                <p class="error-message">Invalid username or password.</p>
+            </form>
+        </main>
+    </body>
+</html>
