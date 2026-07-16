@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+}
+
+header {
+    height: 80px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+header a {
+    text-decoration: none;
+    color: navy;
+    font-weight: bold;
+    transition: color .3s ease;
+}
+
+header a:hover {
+    color: teal;
+}
+
+aside {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 240px;
+    height: calc(100vh - 80px);
+    background-color: navy;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+}
+
+aside a {
+    text-decoration: none;
+    color: white;
+    padding: .9rem 1rem;
+    margin-bottom: .5rem;
+    border-radius: 8px;
+    transition: background-color .3s ease;
+}
+
+aside a:hover {
+    background-color: teal;
+}
+
+main {
+    margin-left: 240px;
+    margin-top: 80px;
+    padding: 2rem;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stats-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 12px rgba(0,0,0,.08);
+    transition: transform .25s ease;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+}
+
+.stats-card p:first-child {
+    color: #666;
+    margin-bottom: .8rem;
+}
+
+.stats-numbers {
+    font-size: 2rem;
+    font-weight: bold;
+    color: navy;
+}
+
+.quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.quick-actions button {
+    flex: 1;
+    min-width: 180px;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: navy;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color .3s ease,
+                transform .2s ease;
+}
+
+.quick-actions button:hover {
+    background-color: teal;
+    transform: translateY(-3px);
+}
+
+.recent-activity {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 12px rgba(0,0,0,.08);
+}
+
+.recent-activity h2 {
+    margin-bottom: 1rem;
+    color: navy;
+}
+
+.recent-activity p {
+    padding: .8rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.recent-activity p:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+
+    aside {
+        width: 200px;
+    }
+
+    main {
+        margin-left: 200px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 1rem;
+    }
+
+    aside {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    main {
+        margin: 0;
+    }
+
+    .quick-actions {
+        flex-direction: column;
+    }
+
+}

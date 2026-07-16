@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Dashboard | BrightMinds</title>
+        <link rel="stylesheet" href="dashboard_styles.css">
+    </head>
+
+    <body>
+        <header>
+            <img src="images/BrightMinds_logo.jpg" alt="BrightMinds Logo" class="logo"/>
+            <p>Administrator Dashboard</p>
+            <search></search>
+            <a href="">Notifications</a>
+            <p>Tutor name here.</p>
+            <a href="">Log Out</a>
+        </header>
+        
+        <aside>
+            <a href="">Dashboard</a>
+            <a href="">Learners</a>
+            <a href="">Tutors</a>
+            <a href="">Attendance Reports</a>
+            <a href="">Payments</a>
+            <a href="">Reports</a>
+            <a href="">Announcements</a>
+            <a href="">Settings</a>
+            <a href="">Logout</a>
+        </aside>
+
+        <main>
+            <div class="stats-container">
+                    <div class="stats-card">
+                        <p>Active Learners</p>
+                        <span 
+                        class="stats-numbers"
+                        data-target="10"
+                        >
+                        0
+                        </span>
+                    </div>
+
+                    <div class="stats-card">
+                        <p>Expert Tutors</p>
+                        <span 
+                        class="stats-numbers"
+                        data-target="3"
+                        >
+                        0
+                        </span>
+                    </div>
+
+                    <div class="stats-card">
+                        <p>Attendance</p>
+                        <p><span 
+                        class="stats-numbers"
+                        data-target="19"
+                        >
+                        0
+                        </span>%</p>
+                    </div>
+
+                    <div class="stats-card">
+                        <p>Payments</p>
+                        <p>R<span class="stats-numbers"
+                        data-target="10"
+                        >
+                        0
+                        </span></p>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <button class="add-learner" aria-label="Add Learner">Add Learner</button>
+                    <button class="add-tutor" aria-label="Add Tutor">Add Tutor</button>
+                    <button class="generate-report" aria-label="Generate Report">Generate Report</button>
+                    <button class="create-announcement" aria-label="Create Announcement">Create Announcement</button>
+                </div>
+
+                <div class="recent-activity">
+                    <p>Amanda registered</p>
+                    <p>Tutor Sarah submitted attendance</p>
+                </div>
+        </main>
+    </body>
+</html>
