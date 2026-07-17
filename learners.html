@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Learners | BrightMinds</title>
+        <link rel="stylesheet" href="learners_styles.css">
+        <script src="" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <button class="sidebar-toggle" aria-label="Toggle sidebar menu">☰</button>
+            <img src="images/BrightMinds_logo.jpg" alt="BrightMinds Logo" class="logo"/>
+            <p>Learners Dashboard</p>
+            <a href="">🔔</a>
+            <p>Administrator name here.</p>
+        </header>
+
+        <section class="overlay"></section>
+        
+        <aside>
+            <button class="close-sidebar" aria-label="Close sidebar menu">✖</button>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="learners.html">Learners</a>
+            <a href="">Tutors</a>
+            <a href="">Attendance Reports</a>
+            <a href="">Payments</a>
+            <a href="">Reports</a>
+            <a href="">Announcements</a>
+            <a href="">Settings</a>
+            <a href="">Logout</a>
+        </aside>
+
+        <main>
+            <h1>Learners</h1>
+            <p class="description">Manage all registered learners in the tutoring programme.</p>
+
+            <div class="top-action">
+                <button class="add-button" aria-label="Add learner">Add Learner</button>
+                <input type="search" id="learner-search" placeholder="Search learners..."/>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Grade</th>
+                            <th>Attendance</th>
+                            <th>Payment</th>
+                            <th>Parent's number</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                            <td>Amanda</td>
+                            <td>7</td>
+                            <td>98%</td>
+                            <td>Paid</td>
+                            <td>068 256 4787</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </main>
+    </body>
+</html>

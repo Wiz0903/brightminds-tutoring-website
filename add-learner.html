@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Add Learner | BrightMinds</title>
+        <link rel="stylesheet" href="add_learner_styles.css">
+    </head>
+
+    <body>
+        <header>
+            <a href="learners.html">← Back to Learners</a>
+            <p>Add New Learner</p>
+            <p>Register a learner into the BrightMinds system.</p>
+        </header>
+
+        <main>
+            <form action="">
+                <fieldset>
+                    <legend>Learner Information</legend>
+                    <label for="learner-firstname">First Name:</label>
+                    <input type="text" name="learner-firstname" size="20" id="learner-firstname" required/>
+
+                    <label for="learner-lastname">Last Name:</label>
+                    <input type="text" name="learner-lastname" size="20" id="learner-lastname" required/>
+
+                    <label for="grade">Learner Grade:</label>
+                    <input type="number" name="grade" size="12" id="grade" required/>
+
+                    <label for="school">Learner School:</label>
+                    <input type="text" name="school" size="20" id="school" required/>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Parent/Guardian Information</legend>
+                    <label for="parent-name">Parent/Guardian Name: </label>
+                    <input
+                        type="text"
+                        name="parent-name"
+                        id="parent-name"
+                        required
+                    />
+
+                    <label for="parent-phone">Parent/Guardian Phone: </label>
+                    <input
+                        type="tel"
+                        name="parent-phone"
+                        id="parent-phone"
+                        required
+                    />
+
+                    <label for="parent-email">Parent/Guardian Email: </label>
+                    <input
+                        type="email"
+                        name="parent-email"
+                        id="parent-email"
+                        required
+                    />
+                    <p class="email-message"></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Academic Information</legend>
+                    <p>Subjects needing help with</p>
+                    <input
+                        id="mathematics"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="mathematics"
+                    />
+                    <label class="subject-struggle" for="mathematics">Mathematics</label>
+
+                    <input
+                        id="physical-sciences"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="physical-sciences"
+                    />
+                    <label class="subject-struggle" for="physical-sciences">Physical Sciences</label>
+
+                    <input
+                        id="life-skills"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="life-skills"
+                    />
+                    <label class="subject-struggle" for="life-skills">Life Skills</label>
+
+                    <input
+                        id="english"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="english"
+                    />
+                    <label class="subject-struggle" for="english">English</label>
+
+                    <input
+                        id="accounting"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="accounting"
+                    />
+                    <label class="subject-struggle" for="accounting">Accounting</label>
+
+                    <input
+                        id="economics"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="economics"
+                    />
+                    <label class="subject-struggle" for="economics">Economics</label>
+
+                    <input
+                        id="mathematical-literacy"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="mathematical-literacy"
+                    />
+                    <label class="subject-struggle" for="mathematical-literacy">Mathematical Literacy</label>
+
+                    <input
+                        id="natural-sciences"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="natural-sciences"
+                    />
+                    <label class="subject-struggle" for="natural-sciences">Natural Sciences</label>
+
+                    <input
+                        id="social-sciences"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="social-sciences"
+                    />
+                    <label class="subject-struggle" for="social-sciences">Social Sciences</label>
+
+                    <input
+                        id="technology"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="technology"
+                    />
+                    <label class="subject-struggle" for="technology">Technology</label>
+
+                    <input
+                        id="technical-mathematics"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="technical-mathematics"
+                    />
+                    <label class="subject-struggle" for="technical-mathematics">Technical Mathematics</label>
+
+                    <input
+                        id="business-studies"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="business-studies"
+                    />
+                    <label class="subject-struggle" for="business-studies">Business Studies</label>
+
+                    <input
+                        id="information-technology"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="information-technology"
+                    />
+                    <label class="subject-struggle" for="information-technology">Information Technology</label>
+
+                    <input
+                        id="computer-applications-technology"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="computer-applications-technology"
+                    />
+                    <label class="subject-struggle" for="computer-applications-technology">Computer Applications Technology</label>
+
+                    <input
+                        id="life-orientation"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="life-orientation"
+                    />
+                    <label class="subject-struggle" for="life-orientation">Life Orientation</label>
+
+                    <input
+                        id="economics-management-sciences"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="economics-management-sciences"
+                    />
+                    <label class="subject-struggle" for="economics-management-sciences">Economics and Management Sciences</label>
+
+                    <input
+                        id="sesotho"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="sesotho"
+                    />
+                    <label class="subject-struggle" for="sesotho">Sesotho</label>
+
+                    <input
+                        id="technical-sciences"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="technical-sciences"
+                    />
+                    <label class="subject-struggle" for="technical-sciences">Technical Sciences</label>
+
+                    <input
+                        id="natural-sciences-and-technology"
+                        class="subject-checkbox"
+                        type="checkbox"
+                        name="subject-struggle"
+                        value="natural-sciences-and-technology"
+                    />
+                    <label class="subject-struggle" for="natural-sciences-and-technology">Natural Sciences and Technology</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Current Challenges</legend>
+                    <label for="notes">Any specific topics the learner struggles with</label>
+                    <textarea id="notes" name="notes" rows="4" cols="50" maxlength="300"></textarea>
+                    <p class="character-length"><span class="count-words">0</span> / 300</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Payment</legend>
+                    <p>Method:</p>
+                    <label class="payment-method" for="cash">Cash</label>
+                    <input
+                        id="cash"
+                        class="payment-method-radio-btn"
+                        type="radio"
+                        name="payment-method"
+                        value="cash"
+                        required
+                    />
+
+                    <label class="payment-method" for="eft">EFT</label>
+                    <input
+                        id="eft"
+                        class="payment-method-radio-btn"
+                        type="radio"
+                        name="payment-method"
+                        value="eft"
+                    />
+
+                    <p>Status:</p>
+                    <label class="status-method" for="paid">Paid</label>
+                    <input
+                        id="paid"
+                        class="status-method-radio-btn"
+                        type="radio"
+                        name="status-method"
+                        value="paid"
+                        required
+                    />
+
+                    <label class="status-method" for="eft">Outstanding</label>
+                    <input
+                        id="outstanding"
+                        class="status-method-radio-btn"
+                        type="radio"
+                        name="status-method"
+                        value="outstanding"
+                    />
+                </fieldset>
+
+                <button href="learners.html" class="cancel">Cancel</button>
+                <button type="submit" class="save" disabled>Save Learner</button>
+            </form>
+        </main>
+    </body>
+</html>
