@@ -31,6 +31,8 @@ overlay.addEventListener('click', () => {
     closeSidebar();
 });
 
+let hasAnimated = false;
+
 const animateStatistics = () => {
 
     if (hasAnimated) return;
@@ -63,3 +65,6 @@ const animateStatistics = () => {
     }
 
 };
+
+
+animateStatistics();
