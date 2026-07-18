@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Add Learner | BrightMinds</title>
         <link rel="stylesheet" href="add_learner_styles.css">
+        <script src="add_learner_script.js" defer></script>
     </head>
 
     <body>
@@ -20,15 +21,19 @@
                     <legend>Learner Information</legend>
                     <label for="learner-firstname">First Name:</label>
                     <input type="text" name="learner-firstname" size="20" id="learner-firstname" required/>
+                    <p class="firstname-message"></p>
 
                     <label for="learner-lastname">Last Name:</label>
                     <input type="text" name="learner-lastname" size="20" id="learner-lastname" required/>
+                    <p class="lastname-message"></p>
 
                     <label for="grade">Learner Grade:</label>
                     <input type="number" name="grade" size="12" id="grade" required/>
+                    <p class="grade-message"></p>
 
                     <label for="school">Learner School:</label>
                     <input type="text" name="school" size="20" id="school" required/>
+                    <p class="school-message"></p>
                 </fieldset>
 
                 <fieldset>
@@ -40,6 +45,7 @@
                         id="parent-name"
                         required
                     />
+                    <p class="name-message"></p>
 
                     <label for="parent-phone">Parent/Guardian Phone: </label>
                     <input
@@ -48,13 +54,13 @@
                         id="parent-phone"
                         required
                     />
+                    <p class="phone-message"></p>
 
-                    <label for="parent-email">Parent/Guardian Email: </label>
+                    <label for="parent-email">Parent/Guardian Email(optional): </label>
                     <input
                         type="email"
                         name="parent-email"
                         id="parent-email"
-                        required
                     />
                     <p class="email-message"></p>
                 </fieldset>
@@ -232,6 +238,8 @@
                         value="natural-sciences-and-technology"
                     />
                     <label class="subject-struggle" for="natural-sciences-and-technology">Natural Sciences and Technology</label>
+
+                    <p class="subject-message"></p>
                 </fieldset>
 
                 <fieldset>
@@ -262,6 +270,7 @@
                         name="payment-method"
                         value="eft"
                     />
+                    <p class="payment-message"></p>
 
                     <p>Status:</p>
                     <label class="status-method" for="paid">Paid</label>
@@ -282,9 +291,10 @@
                         name="status-method"
                         value="outstanding"
                     />
+                    <p class="status-message"></p>
                 </fieldset>
 
-                <button href="learners.html" class="cancel">Cancel</button>
+                <button class="cancel">Cancel</button>
                 <button type="submit" class="save" disabled>Save Learner</button>
             </form>
         </main>
