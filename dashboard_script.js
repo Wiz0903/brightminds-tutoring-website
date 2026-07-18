@@ -7,6 +7,8 @@ const overlay = document.querySelector('.overlay');
 const statsNumbers = document.querySelectorAll('.stats-numbers');
 const statsSection = document.querySelector('.stats-container');
 
+const addButton = document.querySelector('.add-learner');
+
 const toggleSidebar = () => {
     sidebar.classList.toggle('active');
     overlay.classList.toggle('active');
@@ -68,3 +70,7 @@ const animateStatistics = () => {
 
 
 animateStatistics();
+
+addButton.addEventListener('click', () => {
+    window.location.href = "add-learner.html";
+});
