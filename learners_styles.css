@@ -116,6 +116,7 @@ main {
         padding: 0 1rem;
     }
 
+    header search,
     header p:last-child {
         display: none;
     }
@@ -125,28 +126,7 @@ main {
     .sidebar-toggle {
         display: block;
     }
-
-    /* Sidebar */
-
-    aside {
-        position: fixed;
-        top: 0;
-        left: -260px;
-        width: 250px;
-        height: 100vh;
-        z-index: 1200;
-
-        transition: left .35s ease;
-        padding-top: 2rem;
-    }
-
-    aside.active {
-        left: 0;
-    }
-
-    .close-sidebar {
-        display: block;
-    }
+}
 
     /* Main */
 
@@ -156,18 +136,234 @@ main {
         padding: 1rem;
     }
 
-    .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1100;
+/* ==========================
+   GENERAL RESET
+========================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #333;
+}
+
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+aside {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: #1e293b;
+    color: white;
+    padding: 30px 20px;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+aside.active {
+    left: 0;
+}
+
+aside nav ul {
+    list-style: none;
+}
+
+aside nav li {
+    margin-bottom: 20px;
+}
+
+aside nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.close-sidebar {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* ==========================
+   OVERLAY
+========================== */
+
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+
+header {
+    background-color: white;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.sidebar-toggle {
+    border: none;
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+
+/* ==========================
+   MAIN CONTENT
+========================== */
+
+main {
+    padding: 30px;
+}
+
+
+/* ==========================
+   LEARNERS HEADER SECTION
+========================== */
+
+.learners-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.add-button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* ==========================
+   TABLE
+========================== */
+
+.table-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+thead {
+    background-color: #2563eb;
+    color: white;
+}
+
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+
+/* ==========================
+   ACTION BUTTONS
+========================== */
+
+.action-button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+
+.view-button {
+    background-color: #22c55e;
+    color: white;
+}
+
+
+.edit-button {
+    background-color: #f59e0b;
+    color: white;
+}
+
+
+.delete-button {
+    background-color: #ef4444;
+    color: white;
+}
+
+
+/* ==========================
+   MOBILE DESIGN
+========================== */
+
+@media(max-width: 768px) {
+
+    main {
+        padding: 15px;
     }
 
-    .overlay.active {
-        display: block;
+
+    table {
+        min-width: 700px;
     }
+
+
+    .learners-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
 }
