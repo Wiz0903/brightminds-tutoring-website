@@ -292,3 +292,28 @@ saveButton.addEventListener('click', () => {
 cancelButton.addEventListener('click', () => {
     window.location.href = "learners.html";
 });
+
+const calculateProgress = () => {
+    const totalRequiredFields = requiredFields.length;
+    let completed = 0;
+
+    requiredFields.forEach(field => {
+        if (field.value.trim().length > 0 && field.validity.valid) {
+            completed++;
+        }
+    });
+
+    const progress = Math.round((completed / totalRequiredFields) * 100);
+
+    if (progress === 100) {
+        saveButton.disabled = false;
+    } else {
+        saveButton.disabled = true;
+    }
+};
+
+requiredFields.forEach(field => {
+    field.addEventListener('input', calculateProgress);
+});
+
+calculateProgress();
