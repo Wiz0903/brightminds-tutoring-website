@@ -1,0 +1,130 @@
+/* ===========================
+   Global Styles
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+header {
+    background: #ffffff;
+    padding: 20px 40px;
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
+    transition: .3s;
+}
+
+header a:hover {
+    color: #1d4ed8;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #222;
+}
+
+/* ===========================
+   Main Layout
+=========================== */
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+
+    display: grid;
+    gap: 25px;
+}
+
+/* ===========================
+   Sections
+=========================== */
+
+section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+section h2 {
+    color: #2563eb;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+/* ===========================
+   Paragraphs
+=========================== */
+
+section p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+section strong {
+    color: #111827;
+}
+
+section span {
+    color: #555;
+}
+
+/* ===========================
+   Subjects
+=========================== */
+
+.subjects {
+    margin-bottom: 20px;
+}
+
+.learner-subjects {
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.learner-subjects li {
+    margin-bottom: 6px;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    main {
+        margin: 20px;
+    }
+
+}
