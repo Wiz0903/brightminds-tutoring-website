@@ -42,6 +42,9 @@ overlay.addEventListener('click', () => {
 const learners = JSON.parse(localStorage.getItem('learners')) || [];
 totalLearnersElement.textContent = learners.length;
 
+const tutors = JSON.parse(localStorage.getItem('tutors')) || [];
+totalTutorsElement.textContent = tutors.length;
+
 const activities = {
     type: "learner_created",
     learnerName: "Amanda Smith",
