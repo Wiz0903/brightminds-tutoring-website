@@ -8,6 +8,8 @@ const addButton = document.querySelector('.add-button');
 
 const tableBody = document.querySelector('tbody');
 
+const learnerSearchInput = document.getElementById('learner-search');
+
 const toggleSidebar = () => {
     sidebar.classList.toggle('active');
     overlay.classList.toggle('active');
@@ -36,54 +38,85 @@ addButton.addEventListener('click', () => {
     window.location.href = "add-learner.html";
 });
 
-const displayLearners = () => {
-    const learners = localStorage.getItem('learners');
+function displayLearners(learnersArray) {
+    tableBody.innerHTML = "";
 
-    if (learners !== null) {
-        const learnersArray = JSON.parse(learners);
+    learnersArray.forEach((learner, index) => {
+        const row = document.createElement("tr");
 
-        learnersArray.forEach((learner, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `<td>${learner.firstName} ${learner.lastName}</td><td>${learner.grade}</td><td>Attendance</td><td>${learner.statusMethod}</td><td>${learner.parentPhone}</td><td><button class="view-button" data-index="${index}">View</button><button class="edit-button" data-index="${index}">Edit</button><button class="delete-button" data-index="${index}">Delete</button></td>`;
-            tableBody.append(row);
+        row.innerHTML = `
+            <td>${learner.firstName} ${learner.lastName}</td>
+            <td>${learner.grade}</td>
+            <td>Attendance</td>
+            <td>${learner.statusMethod}</td>
+            <td>${learner.parentPhone}</td>
+            <td>
+                <button class="view-button" data-index="${index}">View</button>
+                <button class="edit-button" data-index="${index}">Edit</button>
+                <button class="delete-button" data-index="${index}">Delete</button>
+            </td>
+        `;
+
+        const viewButtons = row.querySelectorAll('.view-button');
+
+        viewButtons.forEach(viewButton => {
+            viewButton.addEventListener('click', (event) => {
+                const index = event.target.dataset.index;
+                localStorage.setItem('selectedLearnerIndex', index);
+                window.location.href = "learner-profile.html";
+            });
         });
-    }
+
+        const editButtons = row.querySelectorAll('.edit-button');
+
+        editButtons.forEach(editButton => {
+            editButton.addEventListener('click', (event) => {
+                const index = event.target.dataset.index;
+                localStorage.setItem('selectedLearnerIndex', index);
+                window.location.href = "edit-learner.html";
+            });
+        });
+
+        const deleteButtons = row.querySelectorAll('.delete-button');
+
+        deleteButtons.forEach(deleteButton => {
+            deleteButton.addEventListener('click', (event) => {
+                const index = event.target.dataset.index;
+                const userConfirmed = confirm('Are you sure you want to delete this learner?');
+
+                if (userConfirmed) {
+                    const learners = localStorage.getItem('learners');
+                    const learnersArray = JSON.parse(learners);
+                    learnersArray.splice(index, 1);
+                    const JSONArray = JSON.stringify(learnersArray);
+                    localStorage.setItem('learners', JSONArray);
+                    window.location.reload();
+                }
+            });
+        });
+
+        tableBody.append(row);
+    });
 }
 
-displayLearners();
+const learners = localStorage.getItem("learners");
+const learnersArray = JSON.parse(learners) || [];
 
-const viewButtons = document.querySelectorAll('.view-button');
+displayLearners(learnersArray);
 
-viewButtons.forEach(viewButton => {
-    viewButton.addEventListener('click', (event) => {
-        const index = event.target.dataset.index;
-        localStorage.setItem('selectedLearnerIndex', index);
-        window.location.href = "learner-profile.html";
-    });
-});
+function filterLearners() {
+    const filter = learnerSearchInput.value.toLowerCase();
+    const learners = localStorage.getItem('learners');
+    const learnersArray = JSON.parse(learners) || [];
+    let matches = [];
 
-const editButtons = document.querySelectorAll('.edit-button');
-
-editButtons.forEach(editButton => {
-    editButton.addEventListener('click', (event) => {
-        const index = event.target.dataset.index;
-        localStorage.setItem('selectedLearnerIndex', index);
-        window.location.href = "edit-learner.html";
-    });
-});
-
-const deleteButtons = document.querySelectorAll('.delete-button');
-
-deleteButtons.forEach(deleteButton => {
-    deleteButton.addEventListener('click', (event) => {
-        const index = event.target.dataset.index;
-        const userConfirmed = confirm('Are you sure you want to delete this learner?');
-
-        if (userConfirmed) {
-            learnersArray.splice(index, 1);
-            const JSONArray = JSON.stringify(learnersArray);
-            localStorage.setItem('learners', JSONArray);
-            window.location.reload();
+    learnersArray.forEach(learner => {
+        const fullName = `${learner.firstName} ${learner.lastName}`.toLowerCase();
+        if (fullName.includes(filter)) {
+            matches.push(learner);
         }
     });
-});
+    displayLearners(matches);
+}
+
+learnerSearchInput.addEventListener("input", filterLearners);
