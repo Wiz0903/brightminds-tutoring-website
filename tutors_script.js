@@ -36,56 +36,74 @@ addButton.addEventListener('click', () => {
     window.location.href = "add-tutor.html";
 });
 
-const displayTutors = () => {
-    const tutors = localStorage.getItem('tutors');
+function displayLearners(tutorsArray) {
+    tableBody.innerHTML = "";
 
-    if (tutors !== null) {
-        const tutorsArray = JSON.parse(tutors);
+    learnersArray.forEach((tutor, index) => {
+        const row = document.createElement("tr");
 
-        tutorsArray.forEach((tutor, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `<td>${tutor.firstName} ${tutor.lastName}</td><td>${tutor.subjects.join(', ')}</td><td>${tutor.statusMethod.join(', ')}</td><td>${tutor.tutorPhone}</td><td><button class="view-button" data-index="${index}">View</button><button class="edit-button" data-index="${index}">Edit</button><button class="delete-button" data-index="${index}">Delete</button></td>`;
-            tableBody.append(row);
+        row.innerHTML = `<td>${tutor.firstName} ${tutor.lastName}</td><td>${tutor.subjects.join(', ')}</td><td>${tutor.statusMethod.join(', ')}</td><td>${tutor.tutorPhone}</td><td><button class="view-button" data-index="${index}">View</button><button class="edit-button" data-index="${index}">Edit</button><button class="delete-button" data-index="${index}">Delete</button></td>`;
+
+        const viewButtons = row.querySelectorAll('.view-button');
+
+        viewButtons.forEach(viewButton => {
+            viewButton.addEventListener('click', (event) => {
+                const index = event.target.dataset.index;
+                localStorage.setItem('selectedTutorIndex', index);
+                window.location.href = "tutor-profile.html";
+            });
         });
-    }
-}
 
-displayTutors();
+        const editButtons = row.querySelectorAll('.edit-button');
 
-const viewButtons = document.querySelectorAll('.view-button');
+        editButtons.forEach(editButton => {
+            editButton.addEventListener('click', (event) => {
+                const index = event.target.dataset.index;
+                localStorage.setItem('selectedTutorIndex', index);
+                window.location.href = "edit-tutor.html";
+            });
+        });
 
-viewButtons.forEach(viewButton => {
-    viewButton.addEventListener('click', (event) => {
-        const index = event.target.dataset.index;
-        localStorage.setItem('selectedTutorIndex', index);
-        window.location.href = "tutor-profile.html";
+        const deleteButtons = row.querySelectorAll('.delete-button');
+
+        deleteButtons.forEach(deleteButton => {
+            deleteButton.addEventListener('click', (event) => {
+                const index = event.target.dataset.index;
+                const userConfirmed = confirm('Are you sure you want to delete this tutor?');
+
+                if (userConfirmed) {
+                    const tutors = localStorage.getItem('tutors');
+                    const tutorsArray = JSON.parse(tutors);
+                    tutorsArray.splice(index, 1);
+                    const JSONArray = JSON.stringify(tutorsArray);
+                    localStorage.setItem('tutors', JSONArray);
+                    window.location.reload();
+                }
+            });
+        });
+
+        tableBody.append(row);
     });
-});
+ }
 
-const editButtons = document.querySelectorAll('.edit-button');
+const tutors = localStorage.getItem("tutors");
+const tutorsArray = JSON.parse(tutors) || [];
 
-editButtons.forEach(editButton => {
-    editButton.addEventListener('click', (event) => {
-        const index = event.target.dataset.index;
-        localStorage.setItem('selectedTutorIndex', index);
-        window.location.href = "edit-tutor.html";
-    });
-});
+displayLearners(tutorsArray);
 
-const deleteButtons = document.querySelectorAll('.delete-button');
+function filterTutors() {
+    const filter = tutorSearchInput.value.toLowerCase();
+    const tutors = localStorage.getItem('tutors');
+    const tutorsArray = JSON.parse(tutors) || [];
+    let matches = [];
 
-deleteButtons.forEach(deleteButton => {
-    deleteButton.addEventListener('click', (event) => {
-        const index = event.target.dataset.index;
-        const userConfirmed = confirm('Are you sure you want to delete this tutor?');
-
-        if (userConfirmed) {
-            const tutors = localStorage.getItem('tutors');
-            const tutorsArray = JSON.parse(tutors);
-            tutorsArray.splice(index, 1);
-            const JSONArray = JSON.stringify(tutorsArray);
-            localStorage.setItem('tutors', JSONArray);
-            window.location.reload();
+    tutorsArray.forEach(tutor => {
+        const fullName = `${tutor.firstName} ${tutor.lastName}`.toLowerCase();
+        if (fullName.includes(filter)) {
+            matches.push(tutor);
         }
     });
-});
+    displayTutors(matches);
+}
+
+tutorSearchInput.addEventListener("input", filterTutors);
