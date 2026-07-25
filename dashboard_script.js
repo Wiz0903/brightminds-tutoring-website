@@ -7,7 +7,13 @@ const overlay = document.querySelector('.overlay');
 const statsNumbers = document.querySelectorAll('.stats-numbers');
 const statsSection = document.querySelector('.stats-container');
 
-const addButton = document.querySelector('.add-learner');
+const totalLearnersElement = document.querySelector('.total-learners');
+const totalTutorsElement = document.querySelector('.total-tutors');
+const attendanceElement = document.querySelector('.attendance-percentage');
+const paymentsElement = document.querySelector('.total-payments');
+
+const addLearnerButton = document.querySelector('.add-learner');
+const addTutorButton = document.querySelector('.add-tutor');
 
 const toggleSidebar = () => {
     sidebar.classList.toggle('active');
@@ -33,44 +39,20 @@ overlay.addEventListener('click', () => {
     closeSidebar();
 });
 
-let hasAnimated = false;
+const learners = JSON.parse(localStorage.getItem('learners')) || [];
+totalLearnersElement.textContent = learners.length;
 
-const animateStatistics = () => {
+const activities = {
+    type: "learner_created",
+    learnerName: "Amanda Smith",
+    date: "2026-07-18",
+    time: "14:02"
+}
 
-    if (hasAnimated) return;
-
-    const statsSectionTop = statsSection.getBoundingClientRect().top;
-
-    if (statsSectionTop > -100 && statsSectionTop < 200) {
-
-        hasAnimated = true;
-
-        statsNumbers.forEach(statsNumber => {
-
-            let startNumber = 0;
-            const targetNumber = Number(statsNumber.dataset.target);
-
-            const timer = setInterval(() => {
-
-                startNumber++;
-
-                statsNumber.textContent = startNumber;
-
-                if (startNumber >= targetNumber) {
-                    clearInterval(timer);
-                }
-
-            }, 20);
-
-        });
-
-    }
-
-};
-
-
-animateStatistics();
-
-addButton.addEventListener('click', () => {
+addLearnerButton.addEventListener('click', () => {
     window.location.href = "add-learner.html";
+});
+
+addTutorButton.addEventListener('click', () => {
+    window.location.href = "add-tutor.html";
 });
