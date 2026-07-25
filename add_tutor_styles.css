@@ -1,0 +1,242 @@
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #333;
+    padding: 30px;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header {
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+header a {
+    display: inline-block;
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+header p:first-of-type {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+header p:last-of-type {
+    color: #666;
+}
+
+/* ==========================
+   FORM
+========================== */
+
+form {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* ==========================
+   FIELDSETS
+========================== */
+
+fieldset {
+    background: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+}
+
+legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0066cc;
+    padding: 0 10px;
+}
+
+/* ==========================
+   LABELS
+========================== */
+
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* ==========================
+   TEXT INPUTS
+========================== */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    transition: .2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    border-color: #0066cc;
+}
+
+/* ==========================
+   VALIDATION MESSAGES
+========================== */
+
+.firstname-message,
+.lastname-message,
+.phone-message,
+.email-message,
+.subject-message,
+.payment-message,
+.status-message {
+    min-height: 18px;
+    color: #d63031;
+    font-size: .9rem;
+    margin-top: 5px;
+}
+
+/* ==========================
+   SUBJECT SECTION
+========================== */
+
+.subject-checkbox {
+    margin-right: .5rem;
+    margin-top: 1rem;
+}
+
+.subject-struggle {
+    display: inline-block;
+    margin-right: 1.5rem;
+    font-weight: normal;
+}
+
+
+/* ==========================
+   PAYMENT SECTION
+========================== */
+
+.payment-method-radio-btn,
+.status-method-radio-btn {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.payment-method,
+.status-method {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+button {
+    font-family: inherit;
+}
+
+.cancel,
+.save {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.cancel {
+    background: #e5e7eb;
+    color: #333;
+    margin-right: 15px;
+}
+
+.cancel:hover {
+    background: #d1d5db;
+}
+
+.save {
+    background: #0066cc;
+    color: white;
+}
+
+.save:hover:not(:disabled) {
+    background: #004ea3;
+}
+
+.save:disabled {
+    background: #bfc7d4;
+    cursor: not-allowed;
+    opacity: .8;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+    }
+
+    header p:first-of-type {
+        font-size: 1.6rem;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+
+    .subject-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-options,
+    .status-options {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .cancel,
+    .save {
+        width: 100%;
+        margin: 10px 0 0;
+    }
+
+}

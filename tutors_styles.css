@@ -1,0 +1,286 @@
+/* ========== RESET ========== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #333;
+}
+
+/* ========== HEADER ========== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 70px;
+
+    background: white;
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    z-index: 1000;
+}
+
+header p {
+    font-weight: bold;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* ========== SIDEBAR ========== */
+
+aside {
+    position: fixed;
+
+    top: 0;
+    left: -260px;
+
+    width: 250px;
+    height: 100vh;
+
+    background: white;
+
+    box-shadow: 2px 0 12px rgba(0,0,0,.15);
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 80px;
+
+    transition: .3s;
+    z-index: 1200;
+}
+
+aside.active {
+    left: 0;
+}
+
+aside a {
+    text-decoration: none;
+    color: #333;
+
+    padding: 18px 25px;
+
+    transition: .2s;
+}
+
+aside a:hover {
+    background: #0066cc;
+    color: white;
+}
+
+.sidebar-toggle,
+.close-sidebar {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ========== OVERLAY ========== */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.4);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .3s;
+
+    z-index: 1100;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* ========== MAIN ========== */
+
+main {
+    margin-top: 90px;
+    padding: 30px;
+}
+
+main h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* ========== TOP ACTIONS ========== */
+
+.top-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.add-button {
+    background: #0066cc;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 12px 22px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: .25s;
+}
+
+.add-button:hover {
+    background: #004ea3;
+}
+
+#tutor-search {
+    width: 300px;
+
+    padding: 12px 15px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    outline: none;
+}
+
+#tutor-search:focus {
+    border-color: #0066cc;
+}
+
+/* ========== TABLE ========== */
+
+.tutor-table {
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #0066cc;
+    color: white;
+}
+
+th,
+td {
+    padding: 18px;
+    text-align: left;
+}
+
+tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+    background: #f3f8ff;
+}
+
+/* ========== ACTION BUTTONS ========== */
+
+.view-button,
+.edit-button,
+.delete-button {
+    border: none;
+    border-radius: 6px;
+
+    padding: 8px 14px;
+
+    color: white;
+
+    cursor: pointer;
+
+    margin-right: 8px;
+
+    transition: .2s;
+}
+
+.view-button {
+    background: #3498db;
+}
+
+.view-button:hover {
+    background: #2980b9;
+}
+
+.edit-button {
+    background: #f39c12;
+}
+
+.edit-button:hover {
+    background: #d68910;
+}
+
+.delete-button {
+    background: #e74c3c;
+}
+
+.delete-button:hover {
+    background: #c0392b;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+
+    .top-action {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #tutor-search {
+        width: 100%;
+    }
+
+    .tutor-table {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 700px;
+    }
+
+}
