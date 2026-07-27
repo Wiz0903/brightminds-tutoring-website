@@ -13,6 +13,7 @@ const subjectElement = document.querySelector('.learner-subjects');
 const currentChallengesElement = document.querySelector('.current-challenges');
 const paymentMethodElement = document.querySelector('.payment-method');
 const statusMethodElement = document.querySelector('.payment-status');
+const attendanceElement = document.querySelector('.attendance-history');
 
 learnerNameElement.textContent = `${selectedLearner.firstName} ${selectedLearner.lastName}`;
 gradeElement.textContent = selectedLearner.grade;
@@ -24,3 +25,16 @@ subjectElement.innerHTML = selectedLearner.subjects.map(subject => `<li>${subjec
 currentChallengesElement.textContent = selectedLearner.currentChallenges;
 paymentMethodElement.textContent = selectedLearner.paymentMethod;
 statusMethodElement.textContent = selectedLearner.statusMethod;
+
+const loadAttendance = () => {
+    const JSONstring = localStorage.getItem('attendance')
+    const attendanceArray = JSON.parse(JSONstring) || [];
+
+    const learnerAttendance = attendanceArray.filter(record => {
+        return record.learnerName === selectedLearner.firstName + " " + selectedLearner.lastName;
+    });
+
+    attendanceElement.innerHTML = learnerAttendance.map(attendance => `<li>${attendance.date} ${attendance.time}</li>`).join('');
+}
+
+loadAttendance();
