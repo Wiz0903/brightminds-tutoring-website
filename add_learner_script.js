@@ -181,7 +181,6 @@ parentEmailInput.addEventListener('input', () => {
     } else {
         emptyEmail();
     }
-    calculateProgress();
 });
 
 subjectCheckboxes.forEach(subjectCheckbox => {
@@ -307,14 +306,13 @@ const calculateProgress = () => {
     const schoolValid = schoolInput.classList.contains("valid");
     const parentNameValid = parentNameInput.classList.contains("valid");
     const parentPhoneValid = parentPhoneInput.classList.contains("valid");
-    const emailValid = parentEmailInput.classList.contains("valid");
     const subjectSelected = [...subjectCheckboxes].some(subject => {
         return subject.checked;
     });
     const paymentSelected = [...paymentMethods].some(method => method.checked);
     const statusSelected = [...statusMethods].some(method => method.checked);
 
-    if (firstNameValid && lastNameValid && gradeValid && schoolValid && parentNameValid && parentPhoneValid && emailValid && subjectSelected && paymentSelected && statusSelected) {
+    if (firstNameValid && lastNameValid && gradeValid && schoolValid && parentNameValid && parentPhoneValid && subjectSelected && paymentSelected && statusSelected) {
         saveButton.disabled = false;
     } else {
         saveButton.disabled = true;
