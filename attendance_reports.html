@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Attendance Reports | BrightMinds</title>
+        <link rel="stylesheet" href="attendance_reports_styles.css">
+        <script src="attendance_reports_script.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <button class="sidebar-toggle" aria-label="Toggle sidebar menu">☰</button>
+            <img src="images/BrightMinds_logo.jpg" alt="BrightMinds Logo" class="logo"/>
+            <p>Attendance Reports Dashboard</p>
+            <a href="">🔔</a>
+            <p>Tshokolo.</p>
+        </header>
+
+        <section class="overlay"></section>
+        
+        <aside>
+            <button class="close-sidebar" aria-label="Close sidebar menu">✖</button>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="learners.html">Learners</a>
+            <a href="tutors.html">Tutors</a>
+            <a href="attendance_reports.html">Attendance Reports</a>
+            <a href="">Payments</a>
+            <a href="">Reports</a>
+            <a href="">Announcements</a>
+            <a href="">Settings</a>
+            <a href="">Logout</a>
+        </aside>
+
+        <main>
+            <h1>Attendance Reports</h1>
+
+            <h2>Import Attendance</h2>
+            <section class="import-attendance">
+                <p>
+                    Upload an attendance CSV exported from TutorPulse or completed using the BrightMinds template.
+                </p>
+                <button class="import-csv" aria-label="Import Attendance">Import CSV</button>
+                <input type="file" class="real-file-picker" style="display: none;" />
+                <p>Don't have the template?</p>
+                <button class="download-csv">Download CSV Template</button>
+            </section>
+            
+            <h2>Recent Imports</h2>
+            <section class="recent-imports">
+                <span class="recent-import">Never</span>
+            </section>
+
+            <h2>Attendance Statistics</h2>
+            <section class="attendance-statistics">
+                <div class="stats">
+                    <p>Total Attendance Records</p>
+                    <span class="attendance-records">0</span>
+                </div>
+
+                <div class="stats">
+                    <p>Today's Attendance</p>
+                    <span class="today-attendance">0</span>
+                </div>
+                
+                <div class="stats">
+                    <p>Last Import</p>
+                    <span class="last-import">0</span>
+                </div>
+
+                <div class="stats">
+                    <p>Imported Files</p>
+                    <span class="imported-files">0</span>
+                </div>
+            </section>
+
+            <h2>Recent Activity</h2>
+            <section class="recent-activity">
+
+            </section>
+        </main>
+    </body>
+</html>
