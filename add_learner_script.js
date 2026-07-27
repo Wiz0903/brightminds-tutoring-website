@@ -59,6 +59,7 @@ firstNameInput.addEventListener('input', () => {
     } else {
         emptyFirstName();
     }
+    calculateProgress();
 });
 
 const validLastName = () => {
@@ -94,6 +95,7 @@ lastNameInput.addEventListener('input', () => {
     } else {
         emptyLastName();
     }
+    calculateProgress();
 });
 
 gradeInput.addEventListener('input', () => {
@@ -127,6 +129,7 @@ parentNameInput.addEventListener('input', () => {
         parentNameInput.classList.add('invalid');
         parentNameInput.classList.remove('valid');
     }
+    calculateProgress();
 });
 
 parentPhoneInput.addEventListener('input', () => {
@@ -138,6 +141,7 @@ parentPhoneInput.addEventListener('input', () => {
         parentPhoneInput.classList.add('invalid');
         parentPhoneInput.classList.remove('valid');
     }
+    calculateProgress();
 });
 
 
@@ -177,6 +181,7 @@ parentEmailInput.addEventListener('input', () => {
     } else {
         emptyEmail();
     }
+    calculateProgress();
 });
 
 subjectCheckboxes.forEach(subjectCheckbox => {
@@ -206,7 +211,7 @@ subjectCheckboxes.forEach(subjectCheckbox => {
 
             subjectMessage.textContent = "Please select at least one subject.";
         }
-
+        calculateProgress();
     });
 
 });
@@ -222,6 +227,7 @@ paymentMethods.forEach(paymentMethod => {
 
         paymentMethodMessage.textContent = "";
 
+        calculateProgress();
     });
 
 });
@@ -234,6 +240,7 @@ statusMethods.forEach(statusMethod => {
             method.classList.add("valid");
             method.classList.remove("invalid");
         });
+        calculateProgress();
     });
 
 });
@@ -294,18 +301,20 @@ cancelButton.addEventListener('click', () => {
 });
 
 const calculateProgress = () => {
-    const totalRequiredFields = requiredFields.length;
-    let completed = 0;
-
-    requiredFields.forEach(field => {
-        if (field.value.trim().length > 0 && field.validity.valid) {
-            completed++;
-        }
+    const firstNameValid = firstNameInput.classList.contains("valid");
+    const lastNameValid = lastNameInput.classList.contains("valid");
+    const gradeValid = gradeInput.classList.contains("valid");
+    const schoolValid = schoolInput.classList.contains("valid");
+    const parentNameValid = parentNameInput.classList.contains("valid");
+    const parentPhoneValid = parentPhoneInput.classList.contains("valid");
+    const emailValid = parentEmailInput.classList.contains("valid");
+    const subjectSelected = [...subjectCheckboxes].some(subject => {
+        return subject.checked;
     });
+    const paymentSelected = [...paymentMethods].some(method => method.checked);
+    const statusSelected = [...statusMethods].some(method => method.checked);
 
-    const progress = Math.round((completed / totalRequiredFields) * 100);
-
-    if (progress === 100) {
+    if (firstNameValid && lastNameValid && gradeValid && schoolValid && parentNameValid && parentPhoneValid && emailValid && subjectSelected && paymentSelected && statusSelected) {
         saveButton.disabled = false;
     } else {
         saveButton.disabled = true;
