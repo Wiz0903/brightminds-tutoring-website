@@ -99,6 +99,8 @@ const readCSV = (file) => {
 
     reader.addEventListener("load", () => {
        const attendanceRecords = processAttendance(reader.result);
+       saveAttendance(attendanceRecords);
+       updateDashboard();
     });
 
     reader.readAsText(file);
@@ -157,6 +159,38 @@ const updateRecentImports = (attendanceArray) => {
     recentImport.textContent = `${mostRecent.date} ${mostRecent.time}`;
 }
 
+let attendanceChart = null;
+
+const updateAttendanceGraph = (attendanceArray) => {
+    const countsByDate = attendanceArray.reduce((acc, record) => {
+        acc[record.date] = (acc[record.date] || 0) + 1;
+        return acc;
+    }, {});
+
+    const chartLabels = Object.keys(countsByDate).sort();
+    const chartData = chartLabels.map(date => countsByDate[date]);
+
+    if (attendanceChart) {
+        attendanceChart.destroy();
+    }
+
+    const ctx = document.querySelector('.attendance-graph').getContext('2d');
+    attendanceChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: chartLabels,
+        datasets: [{
+        label: 'Attendance',
+        data: chartData,
+        lineTension: 0.3,
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 2,
+        }]
+    }
+    });
+}
+
 const updateRecentActivity = (attendanceArray) => {
     if (attendanceArray.length === 0) {
         recentActivityContainer.innerHTML = `
@@ -190,7 +224,11 @@ const updateRecentActivity = (attendanceArray) => {
 
 const updateDashboard = () => {
     const attendanceArray = loadAttendance();
+
+    updateAttendanceGraph(attendanceArray);
     updateAttendanceStatistics(attendanceArray);
     updateRecentImports(attendanceArray);
     updateRecentActivity(attendanceArray);
 }
+
+updateDashboard();
