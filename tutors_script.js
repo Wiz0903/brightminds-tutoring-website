@@ -8,6 +8,8 @@ const addButton = document.querySelector('.add-button');
 
 const tableBody = document.querySelector('tbody');
 
+const tutorSearchInput = document.getElementById('tutor-search');
+
 const toggleSidebar = () => {
     sidebar.classList.toggle('active');
     overlay.classList.toggle('active');
@@ -36,13 +38,13 @@ addButton.addEventListener('click', () => {
     window.location.href = "add-tutor.html";
 });
 
-function displayLearners(tutorsArray) {
+function displayTutors(tutorsArray) {
     tableBody.innerHTML = "";
 
-    learnersArray.forEach((tutor, index) => {
+    tutorsArray.forEach((tutor, index) => {
         const row = document.createElement("tr");
 
-        row.innerHTML = `<td>${tutor.firstName} ${tutor.lastName}</td><td>${tutor.subjects.join(', ')}</td><td>${tutor.statusMethod.join(', ')}</td><td>${tutor.tutorPhone}</td><td><button class="view-button" data-index="${index}">View</button><button class="edit-button" data-index="${index}">Edit</button><button class="delete-button" data-index="${index}">Delete</button></td>`;
+        row.innerHTML = `<td>${tutor.firstName} ${tutor.lastName}</td><td>${tutor.subjects.join(', ')}</td><td>${tutor.tutorPhone}</td><td>${tutor.statusMethod.join(', ')}</td><td><button class="view-button" data-index="${index}">View</button><button class="edit-button" data-index="${index}">Edit</button><button class="delete-button" data-index="${index}">Delete</button></td>`;
 
         const viewButtons = row.querySelectorAll('.view-button');
 
@@ -89,7 +91,7 @@ function displayLearners(tutorsArray) {
 const tutors = localStorage.getItem("tutors");
 const tutorsArray = JSON.parse(tutors) || [];
 
-displayLearners(tutorsArray);
+displayTutors(tutorsArray);
 
 function filterTutors() {
     const filter = tutorSearchInput.value.toLowerCase();
