@@ -144,3 +144,23 @@ const updateDashboard = () => {
 };
 
 updateDashboard();
+
+const paymentSearchInput = document.getElementById('learner-search');
+
+function filterPayments() {
+    const filter = paymentSearchInput.value.toLowerCase();
+    const payments = localStorage.getItem('payments');
+    const paymentsArray = JSON.parse(payments) || [];
+    let matches = [];
+
+    paymentsArray.forEach(payment => {
+        const fullName = payment.learnerName.toLowerCase();
+        const paymentMethod = payment.paymentMethod.toLowerCase();
+        if (fullName.includes(filter) || paymentMethod.includes(filter)) {
+            matches.push(payment);
+        }
+    });
+    displayPayments(matches);
+}
+
+paymentSearchInput.addEventListener("input", filterPayments);
