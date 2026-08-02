@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Record Payment | BrightMinds</title>
+        <link rel="stylesheet" href="record_payment_styles.css">
+        <script src="record_payment_script.js" defer></script>
+    </head>
+
+    <body>
+        <main>
+            <h1>Record Payment</h1>
+
+            <form action="" class="payment-form">
+                <label for="learners">Learners:</label>
+                <select name="learners" id="learners">
+                    <option value="">Select a learner</option>
+                </select>
+
+                <label for="amount">Amount:</label>
+                <input type="number" name="amount" min="1" step="0.01" id="amount" required/>
+
+                <label for="date">Date:</label>
+                <input type="date" name="date" size="20" id="date" required/>
+
+                <fieldset>
+                    <legend>Payment Method</legend>
+                    <div class="payment-method">
+                        <label class="payment-method" for="cash">Cash</label>
+                            <input
+                                id="cash"
+                                class="payment-method-radio-btn"
+                                type="radio"
+                                name="payment-method"
+                                value="cash"
+                                required
+                            />
+
+                        <label class="payment-method" for="eft">EFT</label>
+                            <input
+                                id="eft"
+                                class="payment-method-radio-btn"
+                                type="radio"
+                                name="payment-method"
+                                value="eft"
+                            />
+                    </div>
+                </fieldset>
+
+                <label for="notes">Notes(optional)</label>
+                <textarea id="notes" name="notes" rows="4" cols="50" maxlength="300"></textarea>
+                <p class="character-length"><span class="character-count">0</span> / 300</p>
+
+                <button type="button" class="cancel">Cancel</button>
+                <button type="submit" class="save" aria-label="Save payment">Save Payment</button>
+            </form>
+        </main>
+    </body>
+</html>
