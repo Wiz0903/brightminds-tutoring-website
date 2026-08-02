@@ -50,6 +50,16 @@ const displayPayments = (paymentsArray) => {
             </td>
         `;
 
+        const viewButtons = row.querySelectorAll('.view-button');
+
+        viewButtons.forEach(viewButton => {
+            viewButton.addEventListener('click', (event) => {
+                const index = event.target.dataset.index;
+                localStorage.setItem('selectedPaymentIndex', index);
+                window.location.href = "payment-profile.html";
+            });
+        });
+
         const deleteButtons = row.querySelectorAll('.delete-button');
 
         deleteButtons.forEach(deleteButton => {
@@ -164,3 +174,9 @@ function filterPayments() {
 }
 
 paymentSearchInput.addEventListener("input", filterPayments);
+
+const recordPaymentButton = document.querySelector('.record-payment');
+
+recordPaymentButton.addEventListener('click', () => {
+    window.location.href = "record-payment.html";
+});
