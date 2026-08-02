@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Payments | BrightMinds</title>
+        <link rel="stylesheet" href="payments_styles.css">
+        <script src="payments_script.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <button class="sidebar-toggle" aria-label="Toggle sidebar menu">☰</button>
+            <img src="images/BrightMinds_logo.jpg" alt="BrightMinds Logo" class="logo"/>
+            <p>Payments Dashboard</p>
+            <a href="">🔔</a>
+            <p>Administrator name here.</p>
+        </header>
+
+        <section class="overlay"></section>
+        
+        <aside>
+            <button class="close-sidebar" aria-label="Close sidebar menu">✖</button>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="learners.html">Learners</a>
+            <a href="tutors.html">Tutors</a>
+            <a href="attendance_reports.html">Attendance Reports</a>
+            <a href="payments.html">Payments</a>
+            <a href="">Reports</a>
+            <a href="">Announcements</a>
+            <a href="">Settings</a>
+            <a href="">Logout</a>
+        </aside>
+
+        <main>
+            <h1>Payments</h1>
+
+            <section class="payment-actions">
+                <button class="record-payment" aria-label="Record payment">Record Payment</button>
+            </section>
+
+            <h2>Payment Statistics</h2>
+            <section class="payment-statistics">
+                <div class="stats-container">
+                    <div class="stats-card">
+                        <p>Total Collected</p>
+                        <p>R<span 
+                        class="total-payments"
+                        >
+                        0
+                        </span></p>
+                    </div>
+
+                    <div class="stats-card">
+                        <p>Payments This Month</p>
+                        <p>R<span 
+                        class="monthly-payments"
+                        >
+                        0
+                        </span></p>
+                    </div>
+
+                    <div class="stats-card">
+                        <p>Outstanding Balance</p>
+                        <p>R<span 
+                        class="outstanding-balance"
+                        >
+                        0
+                        </span></p>
+                    </div>
+
+                    <div class="stats-card">
+                        <p>Transactions</p>
+                        <p>
+                            <span class="transactions">0</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <h2>Search Learner</h2>
+            <section class="search">
+                <input type="search" id="learner-search" placeholder="Search learners..."/>
+            </section>
+
+            <h2>Recent Payments</h2>
+            <section class="recent-payments">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Learner</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Method</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+    </body>
+</html>
