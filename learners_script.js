@@ -40,14 +40,20 @@ addButton.addEventListener('click', () => {
 
 function displayLearners(learnersArray) {
     tableBody.innerHTML = "";
+    const JSONstring = localStorage.getItem('attendance')
+    const attendanceArray = JSON.parse(JSONstring) || [];
 
     learnersArray.forEach((learner, index) => {
         const row = document.createElement("tr");
 
+        const learnerAttendance = attendanceArray.filter(record => {
+            return record.learnerName === learner.firstName + " " + learner.lastName;
+        }).length;
+
         row.innerHTML = `
             <td>${learner.firstName} ${learner.lastName}</td>
             <td>${learner.grade}</td>
-            <td>Attendance</td>
+            <td>${learnerAttendance}</td>
             <td>${learner.statusMethod}</td>
             <td>${learner.parentPhone}</td>
             <td>
