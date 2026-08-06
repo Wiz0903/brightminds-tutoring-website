@@ -59,3 +59,25 @@ addLearnerButton.addEventListener('click', () => {
 addTutorButton.addEventListener('click', () => {
     window.location.href = "add-tutor.html";
 });
+
+const updateAttendancePercentage = () => {
+    const attendance = localStorage.getItem("attendance");
+    const attendanceArray = JSON.parse(attendance) || [];
+
+    const today = new Date().toISOString().split("T")[0];
+
+    const learnersCount = learners.length;
+    const todayAttendance = attendanceArray.filter(record => {
+            return record.date === today;
+        }).length;
+
+    if (learnersCount === 0 || todayAttendance === 0) {
+        attendanceElement.textContent = "0";
+        return;
+    }
+
+    const learnerPercentage = Math.floor((todayAttendance / learnersCount) * 100);
+    attendanceElement.textContent = `${learnerPercentage}`;
+}
+
+updateAttendancePercentage();
