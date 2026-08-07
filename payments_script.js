@@ -56,7 +56,7 @@ const displayPayments = (paymentsArray) => {
             viewButton.addEventListener('click', (event) => {
                 const index = event.target.dataset.index;
                 localStorage.setItem('selectedPaymentIndex', index);
-                window.location.href = "payment-history.html";
+                window.location.href = "payment-profile.html";
             });
         });
 
