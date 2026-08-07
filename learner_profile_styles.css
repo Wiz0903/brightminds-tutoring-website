@@ -128,3 +128,296 @@ section span {
     }
 
 }
+
+/* ===========================
+   Global Styles
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+header {
+    background: #ffffff;
+    padding: 20px 40px;
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
+    transition: .3s;
+}
+
+header a:hover {
+    color: #1d4ed8;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #222;
+}
+
+/* ===========================
+   Main Layout
+=========================== */
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+
+    display: grid;
+    gap: 25px;
+}
+
+/* ===========================
+   Sections
+=========================== */
+
+section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+section h2 {
+    color: #2563eb;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+/* ===========================
+   Paragraphs
+=========================== */
+
+section p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+section strong {
+    color: #111827;
+}
+
+section span {
+    color: #555;
+}
+
+/* ===========================
+   Subjects
+=========================== */
+
+.subjects {
+    margin-bottom: 20px;
+}
+
+.learner-subjects {
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.learner-subjects li {
+    margin-bottom: 6px;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    main {
+        margin: 20px;
+    }
+
+}
+
+/* ========== RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== BODY ========== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    padding: 30px;
+}
+
+/* ========== BACK LINK ========== */
+body > a {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+body > a:hover {
+    color: #1d4ed8;
+}
+
+/* ========== MAIN ========== */
+main {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+/* ========== HEADINGS ========== */
+h2 {
+    margin-bottom: 15px;
+    color: #1e3a8a;
+}
+
+main h2:not(:first-child) {
+    margin-top: 35px;
+}
+
+/* ========== LEARNER INFO ========== */
+.learner-info {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.learner-info p {
+    font-size: 1rem;
+}
+
+/* ========== TABLE ========== */
+.payment-history {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #1e40af;
+    color: white;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+tbody tr:hover {
+    background: #eef4ff;
+}
+
+/* ========== NO PAYMENTS ========== */
+.no-payments {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* ========== SUMMARY CARDS ========== */
+.learner-amount {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.total-paid,
+.total-unpaid {
+    flex: 1;
+    min-width: 220px;
+    background: #f8fafc;
+    border-left: 6px solid #2563eb;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.05);
+}
+
+.total-paid p:first-child,
+.total-unpaid p:first-child {
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.total-paid p:last-child,
+.total-unpaid p:last-child {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1e40af;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .learner-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .learner-amount {
+        flex-direction: column;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: .95rem;
+    }
+}
