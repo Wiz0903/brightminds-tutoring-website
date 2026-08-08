@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Payment Reports | BrightMinds</title>
+        <link rel="stylesheet" href="payment_reports_styles.css">
+        <script src="payment_reports_script.js" defer></script>
+    </head>
+
+    <body>
+        <main>
+            <h1>Payment Report</h1>
+            <p class="description">
+                View payments collected from learners.
+            </p>
+
+            <section class="report-filters">
+                <label for="month-filter">Select Month:</label>
+                <select id="month-filter">
+                    <option value="">All Months</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </section>
+
+            <section class="payment-report">
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Learner</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Method</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+
+                </table>
+
+                <p class="no-payments">
+                    No payments found.
+                </p>
+            </section>
+
+            <section class="report-summary">
+                <div class="total-collected">
+                    <p>Total Collected</p>
+                    <p>R<span class="total-amount">0.00</span></p>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+main {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #1e3a5f;
+}
+
+.description {
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+/* -------------------------
+   FILTER
+------------------------- */
+
+.report-filters {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.report-filters label {
+    font-weight: 600;
+}
+
+.report-filters select {
+    padding: 10px 35px 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 0.95rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.report-filters select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* -------------------------
+   PAYMENT TABLE
+------------------------- */
+
+.payment-report {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #1e3a5f;
+    color: #ffffff;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+td {
+    font-size: 0.95rem;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* -------------------------
+   NO PAYMENTS MESSAGE
+------------------------- */
+
+.no-payments {
+    text-align: center;
+    color: #6b7280;
+    padding: 25px 10px;
+}
+
+.no-payments.hide {
+    display: none;
+}
+
+.no-payments.show {
+    display: block;
+}
+
+/* -------------------------
+   SUMMARY
+------------------------- */
+
+.report-summary {
+    margin-top: 25px;
+}
+
+.total-collected {
+    background-color: #ffffff;
+    padding: 22px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total-collected p:first-child {
+    font-weight: 600;
+    color: #374151;
+}
+
+.total-collected p:last-child {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e3a5f;
+}
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media (max-width: 600px) {
+    main {
+        width: 94%;
+        padding: 25px 0;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .report-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .report-filters select {
+        width: 100%;
+    }
+
+    .payment-report {
+        padding: 10px;
+    }
+
+    th,
+    td {
+        padding: 11px 10px;
+        white-space: nowrap;
+    }
+
+    .total-collected {
+        padding: 18px;
+    }
+
+    .total-collected p:last-child {
+        font-size: 1.25rem;
+    }
+}
