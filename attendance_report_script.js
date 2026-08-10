@@ -12,7 +12,7 @@ const noAttendance = document.querySelector('.no-attendance');
 const sessionKeys = new Set();
 
 attendanceArray.forEach(attendance => {
-    const sessionKey = `${attendance.date} ${attendance.time}`
+    const sessionKey = `${attendance.date}`
 
     sessionKeys.add(sessionKey);
 });
@@ -24,18 +24,18 @@ let totalAttendancePercent = 0;
 let matchesFound = false;
 
 learnersArray.forEach(learner => {
-    let sessionsAttended = 0;
+    const attendanceKeys = new Set();
 
     attendanceArray.forEach(attendance => {
         if (`${learner.firstName} ${learner.lastName}` === `${attendance.learnerName}`) {
-            sessionsAttended++;
+            attendanceKeys.add(attendance.date);
         }
     });
 
     let attendancePercent = 0;
 
     if (sessionKeys.size !== 0) {
-        attendancePercent = (sessionsAttended / sessionKeys.size) * 100;
+        attendancePercent = (attendanceKeys.size / sessionKeys.size) * 100;
     }
 
     const row = document.createElement("tr");
@@ -45,7 +45,7 @@ learnersArray.forEach(learner => {
         <td>${learner.grade}</td>
         <td>${learner.school}</td>
         <td>${sessionKeys.size}</td>
-        <td>${sessionsAttended}</td>
+        <td>${attendanceKeys.size}</td>
         <td>${Number(attendancePercent).toFixed(2)}%</td>
     `;
 
