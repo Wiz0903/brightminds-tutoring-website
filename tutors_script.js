@@ -44,7 +44,7 @@ function displayTutors(tutorsArray) {
     tutorsArray.forEach((tutor, index) => {
         const row = document.createElement("tr");
 
-        row.innerHTML = `<td>${tutor.firstName} ${tutor.lastName}</td><td>${tutor.subjects.join(', ')}</td><td>${tutor.tutorPhone}</td><td>${tutor.statusMethod.join(', ')}</td><td><button class="view-button" data-index="${index}">View</button><button class="edit-button" data-index="${index}">Edit</button><button class="delete-button" data-index="${index}">Delete</button></td>`;
+        row.innerHTML = `<td>${tutor.firstName} ${tutor.lastName}</td><td>${tutor.subjects.join(', ')}</td><td>${tutor.tutorPhone}</td><td><button class="view-button" data-index="${index}">View</button><button class="edit-button" data-index="${index}">Edit</button><button class="delete-button" data-index="${index}">Delete</button></td>`;
 
         const viewButtons = row.querySelectorAll('.view-button');
 
