@@ -81,3 +81,25 @@ const updateAttendancePercentage = () => {
 }
 
 updateAttendancePercentage();
+
+const payments = localStorage.getItem("payments");
+const paymentsArray = JSON.parse(payments) || [];
+
+const displayMonthlyPayments = (paymentsArray) => {
+    let total = 0;
+    const today = new Date();
+    const currentMonth = today.getMonth();
+
+    paymentsArray.forEach(payment => {
+        const paymentDate = new Date(payment.date);
+        const paymentMonth = paymentDate.getMonth();
+
+        if (paymentMonth === currentMonth) {
+            total += Number(payment.amount);
+        }
+    });
+
+    paymentsElement.textContent = total.toFixed(2);
+}
+
+displayMonthlyPayments(paymentsArray);
