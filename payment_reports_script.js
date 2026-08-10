@@ -50,8 +50,10 @@ const displayPaymentReport = (paymentsArray) => {
 
     if (matchesFound) {
         noPayments.classList.add('hide');
+        noPayments.classList.remove('show');
     } else {
         noPayments.classList.add('show');
+        noPayments.classList.remove('hide');
     }
 };
 
@@ -60,5 +62,3 @@ monthFilter.addEventListener('change', () => {
 });
 
 displayPaymentReport(paymentsArray);
-
-console.log(paymentsArray);
