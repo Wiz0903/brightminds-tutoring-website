@@ -4,7 +4,6 @@ const tutorPhoneInput = document.getElementById('tutor-phone');
 const tutorEmailInput = document.getElementById('tutor-email');
 const subjectCheckboxes = document.querySelectorAll('.subject-checkbox');
 const paymentMethods = document.querySelectorAll('.payment-method-radio-btn');
-const statusMethods = document.querySelectorAll('.status-method-radio-btn');
 
 
 const firstNameMessage = document.querySelector('.firstname-message');
@@ -191,19 +190,6 @@ paymentMethods.forEach(paymentMethod => {
 
 });
 
-statusMethods.forEach(statusMethod => {
-
-    statusMethod.addEventListener("change", () => {
-
-        statusMethods.forEach(method => {
-            method.classList.add("valid");
-            method.classList.remove("invalid");
-        });
-        calculateProgress();
-    });
-
-});
-
 saveButton.addEventListener('click', () => {
     let checkedSubjects = [];
 
@@ -220,13 +206,6 @@ saveButton.addEventListener('click', () => {
             payment = paymentMethod.value;
     });
 
-    let status = '';
-
-    statusMethods.forEach(statusMethod => {
-        if (statusMethod.checked)
-            status = statusMethod.value;
-    })
-
     const tutor = {
         firstName: firstNameInput.value,
         lastName: lastNameInput.value,
@@ -234,7 +213,6 @@ saveButton.addEventListener('click', () => {
         tutorEmail: tutorEmailInput.value,
         subjects: checkedSubjects,
         paymentMethod: payment,
-        statusMethod: status
     }
 
     if (localStorage.getItem('tutors') === null) {
