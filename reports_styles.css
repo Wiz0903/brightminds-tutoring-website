@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    height: 70px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 0 30px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+header > p:first-of-type {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e3a5f;
+}
+
+header > a {
+    margin-left: auto;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+header > p:last-of-type {
+    color: #4b5563;
+    font-size: 0.9rem;
+}
+
+/* =========================
+   SIDEBAR TOGGLE
+========================= */
+
+.sidebar-toggle {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #1e3a5f;
+    padding: 5px;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+aside {
+    position: fixed;
+    top: 0;
+    left: -280px;
+
+    width: 280px;
+    height: 100vh;
+
+    background-color: #1e3a5f;
+
+    padding: 80px 20px 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: left 0.3s ease;
+
+    z-index: 1200;
+}
+
+aside.active {
+    left: 0;
+}
+
+aside a {
+    color: #ffffff;
+    text-decoration: none;
+
+    padding: 14px 16px;
+
+    border-radius: 6px;
+
+    transition: background-color 0.2s ease;
+}
+
+aside a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.close-sidebar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    border: none;
+    background: transparent;
+
+    color: #ffffff;
+    font-size: 1.2rem;
+
+    cursor: pointer;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease;
+
+    z-index: 1100;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+
+    padding: 45px 0;
+}
+
+h1 {
+    color: #1e3a5f;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #6b7280;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   REPORT CARDS
+========================= */
+
+.reports-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+}
+
+.report-card {
+    background-color: #ffffff;
+
+    padding: 28px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 220px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09);
+}
+
+.report-card h2 {
+    color: #1e3a5f;
+    font-size: 1.3rem;
+
+    margin-bottom: 12px;
+}
+
+.report-card p {
+    color: #6b7280;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+/* =========================
+   REPORT BUTTONS
+========================= */
+
+.report-card button {
+    margin-top: auto;
+
+    width: fit-content;
+
+    padding: 11px 20px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #1e3a5f;
+    color: #ffffff;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.report-card button:hover {
+    background-color: #16304f;
+}
+
+.report-card button:active {
+    transform: scale(0.97);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 0 18px;
+        gap: 12px;
+    }
+
+    header > p:first-of-type {
+        font-size: 0.95rem;
+    }
+
+    header > p:last-of-type {
+        display: none;
+    }
+
+    main {
+        width: 94%;
+        padding: 30px 0;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .reports-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .report-card {
+        padding: 22px;
+        min-height: 200px;
+    }
+
+    aside {
+        width: 260px;
+        left: -260px;
+    }
+}

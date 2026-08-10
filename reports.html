@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Reports | BrightMinds</title>
+        <link rel="stylesheet" href="reports_styles.css">
+        <script src="reports_script.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <button class="sidebar-toggle" aria-label="Toggle sidebar menu">☰</button>
+            <img src="images/BrightMinds_logo.jpg" alt="BrightMinds Logo" class="logo"/>
+            <p>Reports Dashboard</p>
+            <a href="">🔔</a>
+            <p>Administrator name here.</p>
+        </header>
+
+        <section class="overlay"></section>
+
+        <aside>
+            <button class="close-sidebar" aria-label="Close sidebar menu">✖</button>
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="learners.html">Learners</a>
+            <a href="tutors.html">Tutors</a>
+            <a href="attendance_reports.html">Attendance Reports</a>
+            <a href="payments.html">Payments</a>
+            <a href="reports.html">Reports</a>
+            <a href="">Announcements</a>
+            <a href="">Settings</a>
+            <a href="">Logout</a>
+        </aside>
+        
+        <main>
+            <h1>Reports</h1>
+            <p class="description">
+                View and generate reports for the tutoring programme.
+            </p>
+
+            <section class="reports-container">
+
+                <div class="report-card">
+                    <h2>Payment Report</h2>
+                    <p>
+                        View payments collected from learners.
+                    </p>
+                    <button class="payment-report">
+                        View Report
+                    </button>
+                </div>
+
+                <div class="report-card">
+                    <h2>Outstanding Fees</h2>
+                    <p>
+                        View learners who still have outstanding payments.
+                    </p>
+                    <button class="outstanding-report">
+                        View Report
+                    </button>
+                </div>
+
+                <div class="report-card">
+                    <h2>Attendance Report</h2>
+                    <p>
+                        View learner attendance and attendance percentages.
+                    </p>
+                    <button class="attendance-report">
+                        View Report
+                    </button>
+                </div>
+
+                <div class="report-card">
+                    <h2>Tutor Hours</h2>
+                    <p>
+                        View tutor sessions and hours worked.
+                    </p>
+                    <button class="tutor-hours-report">
+                        View Report
+                    </button>
+                </div>
+
+            </section>
+        </main>
+    </body>
+</html>
