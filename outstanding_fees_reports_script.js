@@ -6,6 +6,8 @@ const tableBody = document.querySelector("tbody");
 const totalAmountOutstanding =document.querySelector('.outstanding-total');
 const noOutstanding = document.querySelector('.no-outstanding');
 
+const MONTHLY_FEE = 200;
+
 const displayOutstandingReport = (learnersArray, payments) => {
     tableBody.innerHTML = "";
 
@@ -54,4 +56,4 @@ const displayOutstandingReport = (learnersArray, payments) => {
     }
 };
 
-displayOutstandingReport();
+displayOutstandingReport(learnersArray, payments);
