@@ -14,6 +14,7 @@ const paymentsElement = document.querySelector('.total-payments');
 
 const addLearnerButton = document.querySelector('.add-learner');
 const addTutorButton = document.querySelector('.add-tutor');
+const generateReportButton = document.querySelector('.generate-report');
 
 const toggleSidebar = () => {
     sidebar.classList.toggle('active');
@@ -103,3 +104,7 @@ const displayMonthlyPayments = (paymentsArray) => {
 }
 
 displayMonthlyPayments(paymentsArray);
+
+generateReportButton.addEventListener('click', () => {
+    window.location.href = "reports.html";
+});
