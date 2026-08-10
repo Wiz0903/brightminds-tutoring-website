@@ -58,3 +58,7 @@ const displayPaymentReport = (paymentsArray) => {
 monthFilter.addEventListener('change', () => {
     displayPaymentReport(paymentsArray)
 });
+
+displayPaymentReport(paymentsArray);
+
+console.log(paymentsArray);
