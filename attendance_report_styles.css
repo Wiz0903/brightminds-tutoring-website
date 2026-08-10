@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+main {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* -------------------------
+   PAGE HEADER
+------------------------- */
+
+h1 {
+    color: #1e3a5f;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #6b7280;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* -------------------------
+   SUMMARY CARDS
+------------------------- */
+
+.attendance-summary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.total-sessions,
+.average-attendance {
+    background-color: #ffffff;
+    padding: 24px 28px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-sessions p:first-child,
+.average-attendance p:first-child {
+    color: #374151;
+    font-weight: 600;
+}
+
+.total-sessions p:last-child,
+.average-attendance p:last-child {
+    color: #1e3a5f;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* -------------------------
+   ATTENDANCE TABLE
+------------------------- */
+
+.attendance-report {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #1e3a5f;
+    color: #ffffff;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+td {
+    font-size: 0.95rem;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* -------------------------
+   ATTENDANCE PERCENTAGE
+------------------------- */
+
+td:last-child {
+    font-weight: 700;
+}
+
+/* -------------------------
+   EMPTY STATE
+------------------------- */
+
+.no-attendance {
+    text-align: center;
+    color: #6b7280;
+    padding: 25px 10px;
+}
+
+.no-attendance.hide {
+    display: none;
+}
+
+.no-attendance.show {
+    display: block;
+}
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media (max-width: 700px) {
+
+    main {
+        width: 94%;
+        padding: 25px 0;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .attendance-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .total-sessions,
+    .average-attendance {
+        padding: 20px;
+    }
+
+    .total-sessions p:last-child,
+    .average-attendance p:last-child {
+        font-size: 1.25rem;
+    }
+
+    .attendance-report {
+        padding: 10px;
+    }
+
+    th,
+    td {
+        padding: 11px 10px;
+        white-space: nowrap;
+    }
+}
