@@ -50,28 +50,27 @@
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "EducationalOrganization",
+            "@type": "LocalBusiness",
             "name": "BrightMinds Extra Classes & Tutoring",
-            "alternateName": "BrightMinds",
+            "alternateName": [
+                "BrightMinds",
+                "Bright Minds"
+            ],
             "url": "https://wiz0903.github.io/brightminds-tutoring-website/",
             "logo": "https://wiz0903.github.io/brightminds-tutoring-website/images/BrightMinds_logo.jpg",
-            "description": "BrightMinds Extra Classes & Tutoring provides affordable academic support for Grade 4 to Grade 12 learners in Mangaung, Bloemfontein, Free State.",
+            "description": "BrightMinds Extra Classes & Tutoring provides affordable academic support and tutoring for Grade 4 to Grade 12 learners in Mangaung, Bloemfontein, Free State.",
             "email": "tshokolontho3@gmail.com",
             "telephone": "+27682683275",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Dinawa Street",
-                "addressLocality": "Caleb Motshabi",
+                "addressLocality": "Caleb Motshabi, Mangaung",
                 "addressRegion": "Free State",
                 "addressCountry": "ZA"
             },
             "areaServed": {
                 "@type": "City",
                 "name": "Bloemfontein"
-            },
-            "sameAs": [
-                "https://wiz0903.github.io/brightminds-tutoring-website/"
-            ]
+            }
         }
         </script>
 
@@ -117,8 +116,8 @@
             <section id="about-brightminds">
                 <h2>About BrightMinds</h2>
                 <p>BrightMinds is an extra-classes and tutoring programme based in Mangaung, Bloemfontein, Free State. Our team of dedicated tutors provides academic support to learners from Grade 4 to Grade 12 across a wide range of subjects.</p>
-                <p>Our goal is to create a positive learning environment where learners feel confident to ask questions, develop their understanding, and improve their performance. We believe that every learner can succeed when given the right guidance, support, and encouragement.</p>
-                <p>Through personalized attention, structured lessons and a focus on building strong foundations, our tutors work closely with learners to help them achieve lasting academic success.</p>
+                <p>Our team of dedicated tutors aims to help learners build confidence, strengthen their understanding and improve their academic performance. We provide personalised attention, structured lessons, homework assistance and exam preparation in a supportive and focused learning environment.</p>
+                <p>At BrightMinds, we believe that every learner can improve when they receive the right guidance, encouragement and consistent academic support. Our goal is to help learners develop strong foundations and become more confident in their studies.</p>
             </section>
 
             <section id="next-session">
@@ -146,14 +145,42 @@
             
             <section id="services">
                 <h2>Our Services</h2>
-                <p>We offer a range of tutoring services tailored to meet the unique needs of each learner. Our services include:</p>
-                <ul>
-                    <li>One-on-one tutoring sessions</li>
-                    <li>Group tutoring sessions</li>
-                    <li>Exam preparation and study strategies</li>
-                    <li>Homework assistance and support</li>
-                    <li>Subject-specific tutoring in various disciplines</li>
-                </ul>
+                <p> BrightMinds Extra Classes & Tutoring provides affordable academic support for Grade 4 to Grade 12 learners in Mangaung, Bloemfontein. Our services are designed to help learners understand their subjects, prepare for assessments and develop greater confidence in their studies. </p>
+                <div class="services-container">
+                    <div class="service-card">
+                        <h3>One-on-One Tutoring</h3>
+                        <p>
+                            Individual academic support focused on the learner's specific
+                            needs, challenges and areas for improvement.
+                        </p>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Exam Preparation</h3>
+                        <p>
+                            Revision support, practice questions and study strategies to
+                            help learners prepare for tests and examinations.
+                        </p>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Homework Assistance</h3>
+                        <p>
+                            Guidance with homework and difficult concepts while helping
+                            learners develop independent problem-solving skills.
+                        </p>
+                    </div>
+
+                    <div class="service-card">
+                        <h3>Subject-Specific Support</h3>
+                        <p>
+                            Academic assistance across our range of subjects, including
+                            Mathematics, Physical Science, Accounting, English, Information
+                            Technology and other school subjects we offer.
+                        </p>
+                    </div>
+
+                </div>
             </section>
 
             <section id="subjects-offered">
@@ -183,7 +210,28 @@
             </section>
 
             <section id="grades-taught">
-                <h2>Grades Taught</h2>
+                <h2>Grades We Teach</h2>
+                <div class="grades-container"> 
+                    <div class="grade-card"> 
+                        <h3>Grades 4-6</h3> 
+                        <p> Build strong foundations in key subjects and develop confidence in learning. </p> 
+                    </div> 
+                    
+                    <div class="grade-card"> 
+                        <h3>Grades 7-9</h3> 
+                        <p> Strengthen subject knowledge, develop study skills and prepare for increasing academic demands. </p> 
+                    </div> 
+                    
+                    <div class="grade-card"> 
+                        <h3>Grades 10-12</h3> 
+                        <p> Focus on subject mastery, assessments, examination preparation and preparation for future studies. </p> 
+                    </div> 
+                </div>
+
+                <p class="grades-list-title"> 
+                    <strong>Grades currently supported:</strong> 
+                </p>
+
                 <ul>
                     <li>Grade 4</li>
                     <li>Grade 5</li>
@@ -199,7 +247,9 @@
 
             <section id="find-a-tutor">
                 <h2>Find a Tutor by Subject</h2>
-                <p>Choose a subject</p>
+                <p> Looking for help with a specific subject? Select a subject below to see which BrightMinds tutors specialise in it. </p>
+
+                <label for="subjects"> Choose a subject: </label>
                 <select id="subjects" name="subjects">
                     <option value="All Subjects">All Subjects</option>
                     <option value="English">English</option>
@@ -271,12 +321,39 @@
 
             <section id="why-choose-brightminds">
                 <h2>Why Choose BrightMinds?</h2>
-                <ul>
-                    <li>Small class sizes</li>
-                    <li>Affordable rates</li>
-                    <li>Exam preparation</li>
-                    <li>Supportive and encouraging learning environment</li>
-                </ul>
+                <p> BrightMinds Extra Classes & Tutoring is focused on providing accessible and supportive academic assistance to learners in Mangaung, Bloemfontein. </p> 
+                
+                <div class="why-choose-container"> 
+                    <div class="why-choose-card"> 
+                        <h3>Small Learning Groups</h3> 
+                        <p> Smaller groups allow tutors to give learners more attention, answer questions and identify areas where additional support is needed. </p> 
+                    </div> 
+                    
+                    <div class="why-choose-card"> 
+                        <h3>Affordable Extra Classes</h3> 
+                        <p> Our tutoring programme is designed to make additional academic support accessible to families in our community. </p> 
+                    </div> 
+                    
+                    <div class="why-choose-card"> 
+                        <h3>Experienced Tutors</h3> 
+                        <p> Our tutors support learners across a wide range of school subjects and grade levels. </p> 
+                    </div> 
+                    
+                    <div class="why-choose-card"> 
+                        <h3>Exam & Assessment Support</h3> 
+                        <p> Learners receive guidance with revision, practice questions, study strategies and preparation for assessments and exams. </p> 
+                    </div> 
+                    
+                    <div class="why-choose-card"> 
+                        <h3>Supportive Learning Environment</h3> 
+                        <p> We encourage learners to ask questions, participate actively and develop confidence in their academic abilities. </p> 
+                    </div> 
+                    
+                    <div class="why-choose-card"> 
+                        <h3>Local Community Focus</h3> 
+                        <p> BrightMinds operates from Kopanang Day Care Centre in Caleb Motshabi, Mangaung, Bloemfontein, providing academic support close to the community we serve. </p> 
+                    </div> 
+                </div>
             </section>
 
             <section id="pricing">
@@ -342,10 +419,24 @@
             </section>
 
             <section id="contact-us">
-                <h2>Contact Us</h2>
-                <p>If you are interested in our tutoring services or have any questions, please feel free to reach out to us. We would be happy to discuss how we can support your learning journey.</p>
-                <p>Email: <a href="mailto:tshokolontho3@gmail.com">tshokolontho3@gmail.com</a></p>  
-                <p>Phone: <a href="tel:+27682683275">+27 68 268 3275</a></p>
+                <h2>Contact BrightMinds</h2>
+                <p> Interested in extra classes or tutoring for your child? Contact BrightMinds to ask about subjects, grades, enrolment, schedules and our tutoring programme. </p>
+                <div class="contact-information"> 
+                    <div class="contact-item"> 
+                        <h3>Our Location</h3> 
+                        <p> <strong>Kopanang Day Care Centre</strong><br> Caleb Motshabi<br> Mangaung<br> Bloemfontein<br> Free State, South Africa </p> 
+                    </div> 
+                    
+                    <div class="contact-item"> 
+                        <h3>Phone</h3> 
+                        <p> <a href="tel:+27682683275"> +27 68 268 3275 </a> </p> 
+                    </div> 
+                    
+                    <div class="contact-item"> 
+                        <h3>Email</h3> 
+                        <p> <a href="mailto:tshokolontho3@gmail.com"> tshokolontho3@gmail.com </a> </p> 
+                    </div> 
+                </div>
 
                 <a href="contact.html" id="contact-form-button">Contact Form</a>
             </section>
@@ -361,18 +452,88 @@
             <section id="FAQ-items">
                 <h2>Frequently Asked Questions</h2>
                 <div class="faq-item">
-                    <button class="question">How much does tutoring cost?</button>
-                    <p class="answer">R200 per month.</p>
+                    <button class="question">
+                        How much does BrightMinds tutoring cost?
+                    </button>
+                    <p class="answer">
+                        BrightMinds tutoring is currently available for R200 per month.
+                        Contact us for more information about enrolment and payment arrangements.
+                    </p>
                 </div>
 
                 <div class="faq-item">
-                    <button class="question">Where are lessons held?</button>
-                    <p class="answer">Kopanang Day Care Centre, Caleb Motshabi, Mangaung, Bloemfontein.</p>
+                    <button class="question">
+                        Where are BrightMinds extra classes held?
+                    </button>
+                    <p class="answer">
+                        BrightMinds Extra Classes & Tutoring operates from Kopanang Day Care
+                        Centre in Caleb Motshabi, Mangaung, Bloemfontein, Free State.
+                    </p>
                 </div>
 
                 <div class="faq-item">
-                    <button class="question">Which grades do you teach?</button>
-                    <p class="answer">Grade 4-12.</p>
+                    <button class="question">
+                        Which grades does BrightMinds teach?
+                    </button>
+                    <p class="answer">
+                        We provide academic support and tutoring for learners from Grade 4
+                        to Grade 12.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <button class="question">
+                        Which subjects does BrightMinds offer?
+                    </button>
+                    <p class="answer">
+                        We offer tutoring across a range of subjects, including Mathematics,
+                        Mathematics Literacy, Technical Mathematics, English, Sesotho,
+                        Natural Science, Physical Science, Accounting, Business Studies,
+                        Economics, Information Technology, Computer Applications Technology
+                        and other subjects listed on our website.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <button class="question">
+                        What days are BrightMinds extra classes available?
+                    </button>
+                    <p class="answer">
+                        Extra classes are currently scheduled from Monday to Friday,
+                        from 4:00 PM to 6:00 PM.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <button class="question">
+                        Does BrightMinds offer exam preparation?
+                    </button>
+                    <p class="answer">
+                        Yes. Our tutoring services include revision support, practice
+                        questions, study strategies and preparation for tests and examinations.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <button class="question">
+                        Does BrightMinds offer group tutoring?
+                    </button>
+                    <p class="answer">
+                        Yes. We offer group extra classes as part of our tutoring services.
+                        Group sizes and subject availability may vary.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <button class="question">
+                        How can I contact BrightMinds?
+                    </button>
+                    <p class="answer">
+                        You can contact BrightMinds by phone at
+                        <a href="tel:+27682683275">+27 68 268 3275</a>
+                        or by email at
+                        <a href="mailto:tshokolontho3@gmail.com">tshokolontho3@gmail.com</a>.
+                    </p>
                 </div>
             </section>
         </main>
