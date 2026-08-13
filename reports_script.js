@@ -43,3 +43,8 @@ outstandingReportButton.addEventListener('click', () => {
 attendanceReportButton.addEventListener('click', () => {
     window.location.href = "attendance-report.html";
 });
+
+const savedAdminName = localStorage.getItem('admin') || '';
+const adminName = document.querySelector('.admin-name');
+
+adminName.textContent = savedAdminName;
