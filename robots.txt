@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+Disallow: /login.html
+Disallow: /dashboard.html
+Disallow: /learners.html
+Disallow: /tutors.html
+Disallow: /payments.html
+Disallow: /reports.html
+Disallow: /settings.html
+Disallow: /attendance_reports.html
+
+Sitemap: https://wiz0903.github.io/brightminds-tutoring-website/sitemap.xml
