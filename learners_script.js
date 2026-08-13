@@ -126,3 +126,8 @@ function filterLearners() {
 }
 
 learnerSearchInput.addEventListener("input", filterLearners);
+
+const savedAdminName = localStorage.getItem('admin') || '';
+const adminName = document.querySelector('.admin-name');
+
+adminName.textContent = savedAdminName;
