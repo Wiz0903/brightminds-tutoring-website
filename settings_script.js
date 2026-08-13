@@ -113,3 +113,11 @@ exportDataButton.addEventListener('click', () => {
     document.body.removeChild(downloadLink);
     URL.revokeObjectURL(tempUrl);
 });
+
+const logOUt = document.querySelector('.logout');
+
+logOUt.addEventListener('click', (event) => {
+    event.preventDefault();
+    localStorage.removeItem('loggedIn');
+    window.location.href = "login.html";
+})
