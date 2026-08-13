@@ -114,3 +114,11 @@ const savedAdminName = localStorage.getItem('admin') || '';
 const adminName = document.querySelector('.admin-name');
 
 adminName.textContent = savedAdminName;
+
+const logOUt = document.querySelector('.logout');
+
+logOUt.addEventListener('click', (event) => {
+    event.preventDefault();
+    localStorage.removeItem('loggedIn');
+    window.location.href = "login.html";
+})
