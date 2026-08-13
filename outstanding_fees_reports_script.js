@@ -6,7 +6,7 @@ const tableBody = document.querySelector("tbody");
 const totalAmountOutstanding =document.querySelector('.outstanding-total');
 const noOutstanding = document.querySelector('.no-outstanding');
 
-const MONTHLY_FEE = 200;
+const savedMonthlyFee = JSON.parse(localStorage.getItem('monthlyFee')) || '';
 
 const displayOutstandingReport = (learnersArray, payments) => {
     tableBody.innerHTML = "";
@@ -29,7 +29,7 @@ const displayOutstandingReport = (learnersArray, payments) => {
             }
         });
 
-        const outstanding = Math.max(0, MONTHLY_FEE - amountPaid);
+        const outstanding = Math.max(0, savedMonthlyFee - amountPaid);
         totalOutstanding += outstanding;
 
         if (outstanding > 0) {
@@ -57,3 +57,5 @@ const displayOutstandingReport = (learnersArray, payments) => {
 };
 
 displayOutstandingReport(learnersArray, payments);
+
+console.log(learnersArray);
