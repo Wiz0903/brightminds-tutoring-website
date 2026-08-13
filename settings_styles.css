@@ -1,0 +1,418 @@
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    height: 70px;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    gap: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+header p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+header a {
+    margin-left: auto;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.sidebar-toggle {
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: #1f2937;
+}
+
+
+/* ================================
+   SIDEBAR
+================================ */
+
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #111827;
+    padding: 80px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1200;
+}
+
+aside.active {
+    transform: translateX(0);
+}
+
+aside a {
+    color: #e5e7eb;
+    text-decoration: none;
+    padding: 13px 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+aside a:hover {
+    background-color: #374151;
+    color: #ffffff;
+}
+
+.close-sidebar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* ================================
+   OVERLAY
+================================ */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1100;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ================================
+   MAIN
+================================ */
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 110px 30px 50px;
+}
+
+main h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #6b7280;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   SETTINGS CONTAINER
+================================ */
+
+.settings-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/* ================================
+   SETTINGS CARD
+================================ */
+
+.settings-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.settings-card h2 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.settings-card > p {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+
+/* ================================
+   SETTING ITEM
+================================ */
+
+.setting-item {
+    margin-bottom: 25px;
+}
+
+.setting-item label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.setting-item h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.setting-item p {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.setting-item small {
+    display: block;
+    margin-top: 8px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+
+/* ================================
+   INPUTS
+================================ */
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.input-group span {
+    padding: 11px 13px;
+    background-color: #f3f4f6;
+    color: #374151;
+    border-right: 1px solid #d1d5db;
+}
+
+.input-group input {
+    flex: 1;
+    border: none;
+    outline: none;
+}
+
+.setting-item input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+.setting-item input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    font-size: 15px;
+    outline: none;
+}
+
+.setting-item input:focus {
+    border-color: #2563eb;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+.save-settings,
+.save-admin-settings,
+.export-data,
+.clear-data {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.save-settings,
+.save-admin-settings,
+.export-data {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.save-settings:hover,
+.save-admin-settings:hover,
+.export-data:hover {
+    background-color: #1d4ed8;
+}
+
+.clear-data {
+    background-color: #dc2626;
+    color: #ffffff;
+}
+
+.clear-data:hover {
+    background-color: #b91c1c;
+}
+
+.save-settings:active,
+.save-admin-settings:active,
+.export-data:active,
+.clear-data:active {
+    transform: scale(0.98);
+}
+
+
+/* ================================
+   MESSAGES
+================================ */
+
+.settings-message,
+.admin-settings-message,
+.data-management-message {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #16a34a;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 0 15px;
+        gap: 12px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    header .admin-name {
+        display: none;
+    }
+
+    main {
+        padding: 100px 18px 40px;
+    }
+
+    main h1 {
+        font-size: 27px;
+    }
+
+    .settings-container {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-card {
+        padding: 20px;
+    }
+
+    aside {
+        width: 270px;
+    }
+}
+
+
+/* ================================
+   SMALL PHONES
+================================ */
+
+@media (max-width: 480px) {
+
+    header {
+        height: 60px;
+    }
+
+    .logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    header p {
+        font-size: 13px;
+    }
+
+    main {
+        padding: 85px 15px 30px;
+    }
+
+    main h1 {
+        font-size: 24px;
+    }
+
+    .settings-card {
+        padding: 18px;
+    }
+
+    .settings-card h2 {
+        font-size: 19px;
+    }
+
+    .save-settings,
+    .save-admin-settings,
+    .export-data,
+    .clear-data {
+        width: 100%;
+    }
+}

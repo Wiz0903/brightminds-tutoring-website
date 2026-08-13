@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Settings | BrightMinds</title>
+        <link rel="stylesheet" href="settings_styles.css">
+        <script src="settings_script.js" defer></script>
+    </head>
+
+    <body>
+
+        <header>
+            <button class="sidebar-toggle" aria-label="Toggle sidebar menu">☰</button>
+
+            <img
+                src="images/BrightMinds_logo.jpg"
+                alt="BrightMinds Logo"
+                class="logo"
+            />
+
+            <p>Settings</p>
+
+            <a href="">🔔</a>
+
+            <p class="admin-name">Administrator name here.</p>
+        </header>
+
+        <section class="overlay"></section>
+
+        <aside>
+
+            <button class="close-sidebar" aria-label="Close sidebar menu">
+                ✖
+            </button>
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="learners.html">Learners</a>
+            <a href="tutors.html">Tutors</a>
+            <a href="attendance_reports.html">Attendance Reports</a>
+            <a href="payments.html">Payments</a>
+            <a href="reports.html">Reports</a>
+            <a href="">Announcements</a>
+            <a href="settings.html">Settings</a>
+            <a href="">Logout</a>
+
+        </aside>
+
+        <main>
+
+            <h1>Settings</h1>
+
+            <p class="description">
+                Manage your BrightMinds programme settings.
+            </p>
+
+            <section class="settings-container">
+
+                <div class="settings-card">
+
+                    <h2>Programme Settings</h2>
+
+                    <p>
+                        Configure the basic settings for your tutoring programme.
+                    </p>
+
+                    <div class="setting-item">
+
+                        <label for="monthly-fee">
+                            Monthly Learner Fee
+                        </label>
+
+                        <div class="input-group">
+                            <span>R</span>
+
+                            <input
+                                type="number"
+                                id="monthly-fee"
+                                min="0"
+                                step="0.01"
+                                placeholder="200"
+                            >
+                        </div>
+
+                        <small>
+                            The monthly fee used when calculating outstanding balances.
+                        </small>
+
+                    </div>
+
+                    <button class="save-settings">
+                        Save Settings
+                    </button>
+
+                    <p class="settings-message"></p>
+
+                </div>
+
+                <div class="settings-card">
+
+                    <h2>Administrator Settings</h2>
+
+                    <p>
+                        Manage the administrator information displayed across BrightMinds.
+                    </p>
+
+                    <div class="setting-item">
+
+                        <label for="administrator-name">
+                            Administrator Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="administrator-name"
+                            placeholder="Enter administrator name"
+                        >
+
+                        <small>
+                            This name will be displayed in the BrightMinds dashboard and navigation.
+                        </small>
+
+                    </div>
+
+                    <button class="save-admin-settings">
+                        Save Settings
+                    </button>
+
+                    <p class="admin-settings-message"></p>
+
+                </div>
+
+                <div class="settings-card">
+
+                    <h2>Data Management</h2>
+
+                    <p>
+                        Manage and protect your BrightMinds programme data.
+                    </p>
+
+                    <div class="setting-item">
+
+                        <h3>Export Data</h3>
+
+                        <p>
+                            Download a backup of your learners, tutors, payments,
+                            attendance records, and programme settings.
+                        </p>
+
+                        <button class="export-data">
+                            Export Data
+                        </button>
+
+                    </div>
+
+                    <div class="setting-item">
+
+                        <h3>Clear All Data</h3>
+
+                        <p>
+                            Permanently remove all BrightMinds data stored on this device.
+                        </p>
+
+                        <button class="clear-data">
+                            Clear All Data
+                        </button>
+
+                    </div>
+
+                    <p class="data-management-message"></p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </body>
+</html>
