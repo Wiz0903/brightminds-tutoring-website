@@ -232,3 +232,8 @@ const updateDashboard = () => {
 }
 
 updateDashboard();
+
+const savedAdminName = localStorage.getItem('admin') || '';
+const adminName = document.querySelector('.admin-name');
+
+adminName.textContent = savedAdminName;
