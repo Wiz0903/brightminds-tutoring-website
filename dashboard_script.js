@@ -108,3 +108,8 @@ displayMonthlyPayments(paymentsArray);
 viewReportButton.addEventListener('click', () => {
     window.location.href = "reports.html";
 });
+
+const savedAdminName = localStorage.getItem('admin') || '';
+const adminName = document.querySelector('.admin-name');
+
+adminName.textContent = savedAdminName;
