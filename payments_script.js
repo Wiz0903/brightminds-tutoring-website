@@ -116,7 +116,7 @@ const updateMonthlyPayments = (paymentsArray) => {
     monthlyPayments.textContent = total.toFixed(2);
 }
 
-const MONTHLY_FEE = 200;
+const savedMonthlyFee = JSON.parse(localStorage.getItem('monthlyFee')) || '';
 
 const updateOutstandingBalance = (learnersArray, paymentsArray) => {
     let outstandingTotal = 0;
@@ -135,7 +135,7 @@ const updateOutstandingBalance = (learnersArray, paymentsArray) => {
             }
         });
 
-        const outstanding = Math.max(0, MONTHLY_FEE - amountPaid);
+        const outstanding = Math.max(0, savedMonthlyFee - amountPaid);
         outstandingTotal += outstanding;
     });
 
@@ -180,3 +180,8 @@ const recordPaymentButton = document.querySelector('.record-payment');
 recordPaymentButton.addEventListener('click', () => {
     window.location.href = "record-payment.html";
 });
+
+const savedAdminName = localStorage.getItem('admin') || '';
+const adminName = document.querySelector('.admin-name');
+
+adminName.textContent = savedAdminName;
