@@ -12,6 +12,8 @@ const todayAttendanceRecords = document.querySelector('.today-attendance');
 const recentImport = document.querySelector('.recent-import');
 const recentActivityContainer = document.querySelector('.recent-activity');
 
+const attendanceFilter = document.getElementById('attendance-filter');
+
 const toggleSidebar = () => {
     sidebar.classList.toggle('active');
     overlay.classList.toggle('active');
@@ -237,3 +239,37 @@ const savedAdminName = localStorage.getItem('admin') || '';
 const adminName = document.querySelector('.admin-name');
 
 adminName.textContent = savedAdminName;
+
+const filterAttendance = (attendanceRecords, selectedFilter) => {
+    const today = new Date();
+
+    switch (selectedFilter) {
+        case "7-days":
+            const sevenDaysAgo = new Date(today);
+            sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
+            return attendanceRecords.filter(record => (new Date(record.date) <= today) && (new Date(record.date) >= sevenDaysAgo));
+        case "30-days":
+            const thirtyDaysAgo = new Date(today);
+            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+            return attendanceRecords.filter(record => (new Date(record.date) <= today) && (new Date(record.date) >= thirtyDaysAgo));
+        case "3-months":
+            const threeMonthsAgo = new Date(today);
+            threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+
+            return attendanceRecords.filter(record => (new Date(record.date) <= today) && (new Date(record.date) >= threeMonthsAgo));
+        case "this-year":
+            return attendanceRecords.filter(record => new Date(record.date) >= new Date(new Date().getFullYear(), 0, 1));
+        default:
+            return attendanceRecords;
+    }
+}
+
+attendanceFilter.addEventListener('change', () => {
+    const attendanceRecords = loadAttendance();
+    const selectedFilter = attendanceFilter.value;
+
+    const filteredAttendance = filterAttendance(attendanceRecords, selectedFilter);
+    updateAttendanceGraph(filteredAttendance);
+});
