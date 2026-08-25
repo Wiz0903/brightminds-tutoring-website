@@ -299,3 +299,11 @@ main h2 {
         margin-right: 0;
     }
 }
+
+#attendance-filter {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: .95rem;
+}
