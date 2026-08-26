@@ -102,6 +102,7 @@ const readCSV = (file) => {
     reader.addEventListener("load", () => {
        const attendanceRecords = processAttendance(reader.result);
        saveAttendance(attendanceRecords);
+       addRecentActivity("attendance_imported", `${attendanceRecords.length} attendance records imported.`);
        updateDashboard();
     });
 
