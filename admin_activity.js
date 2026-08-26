@@ -1,12 +1,22 @@
 const addRecentActivity = (activityType, activityMessage) => {
     const today = new Date();
-    const isoString = today.toISOString();
+
+    const date = today.toLocaleDateString("en-CA", {
+        timeZone: "Africa/Johannesburg"
+    });
+
+    const time = today.toLocaleTimeString("en-ZA", {
+        timeZone: "Africa/Johannesburg",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+    });
 
     const activity = {
         type: activityType,
         message: activityMessage,
-        date: isoString.slice(0, 10),
-        time: isoString.slice(11, 16)
+        date,
+        time
     }
 
     const JSONstring = localStorage.getItem('activities')
