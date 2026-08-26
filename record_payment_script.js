@@ -49,6 +49,8 @@ const savePayment = (event) => {
 
     savePayments(payment);
 
+    addRecentActivity("payment_recorded", `Payment of ${amount} recorded for ${selectedLearner.firstName} ${selectedLearner.lastName}.`);
+
     window.location.href = "payments.html";
 }
 
