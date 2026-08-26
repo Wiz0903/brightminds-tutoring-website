@@ -292,6 +292,8 @@ saveButton.addEventListener('click', () => {
         localStorage.setItem('learners', JSON.stringify(learnerArray));
     }
 
+    addRecentActivity("learner_added", `${learner.firstName} ${learner.lastName} added as a new learner.`);
+
     window.location.href = "learners.html";
 });
 
