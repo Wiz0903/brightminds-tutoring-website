@@ -96,6 +96,7 @@ function displayLearners(learnersArray) {
                     learnersArray.splice(index, 1);
                     const JSONArray = JSON.stringify(learnersArray);
                     localStorage.setItem('learners', JSONArray);
+                    addRecentActivity("learner_deleted", `Learner ${learner.firstName} ${learner.lastName} deleted.`);
                     window.location.reload();
                 }
             });
