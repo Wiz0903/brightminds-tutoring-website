@@ -226,6 +226,8 @@ saveButton.addEventListener('click', () => {
         localStorage.setItem('tutors', JSON.stringify(tutorArray));
     }
 
+    addRecentActivity("tutor_created", `${tutor.firstName} ${tutor.lastName} was added as a tutor.`);
+
     window.location.href = "tutors.html";
 });
 
@@ -242,9 +244,8 @@ const calculateProgress = () => {
         return subject.checked;
     });
     const paymentSelected = [...paymentMethods].some(method => method.checked);
-    const statusSelected = [...statusMethods].some(method => method.checked);
 
-    if (firstNameValid && lastNameValid && tutorPhoneValid && tutorEmailValid && subjectSelected && paymentSelected && statusSelected) {
+    if (firstNameValid && lastNameValid && tutorPhoneValid && tutorEmailValid && subjectSelected && paymentSelected) {
         saveButton.disabled = false;
     } else {
         saveButton.disabled = true;
