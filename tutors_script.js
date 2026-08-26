@@ -79,6 +79,7 @@ function displayTutors(tutorsArray) {
                     tutorsArray.splice(index, 1);
                     const JSONArray = JSON.stringify(tutorsArray);
                     localStorage.setItem('tutors', JSONArray);
+                    addRecentActivity("tutor_deleted", `Tutor ${tutor.firstName} ${tutor.lastName} deleted.`);
                     window.location.reload();
                 }
             });
