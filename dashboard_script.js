@@ -16,6 +16,8 @@ const addLearnerButton = document.querySelector('.add-learner');
 const addTutorButton = document.querySelector('.add-tutor');
 const viewReportButton = document.querySelector('.view-report');
 
+const recentActivityContainer = document.querySelector('.recent-activity');
+
 const toggleSidebar = () => {
     sidebar.classList.toggle('active');
     overlay.classList.toggle('active');
@@ -121,3 +123,61 @@ logOUt.addEventListener('click', (event) => {
     localStorage.removeItem('loggedIn');
     window.location.href = "login.html";
 })
+
+const addRecentActivity = (activityType, activityMessage) => {
+    const today = new Date();
+    const isoString = today.toISOString();
+
+    const activity = {
+        type: activityType,
+        message: activityMessage,
+        date: isoString.slice(0, 10),
+        time: isoString.slice(11, 16)
+    }
+
+    const JSONstring = localStorage.getItem('activities')
+    const activityArray = JSON.parse(JSONstring) || [];
+    activityArray.push(activity);
+    const last20 = activityArray.slice(-20); 
+    localStorage.setItem('activities', JSON.stringify(last20));
+}
+
+const loadRecentActivities = () => {
+    const JSONstring = localStorage.getItem('activities')
+    const activityArray = JSON.parse(JSONstring) || [];
+    return activityArray;
+}
+
+const displayRecentActivities = (activityArray) => {
+    if (activityArray.length === 0) {
+        recentActivityContainer.innerHTML = `
+            <p>No recent activity.</p>
+        `;
+        return;
+    }
+
+    activityArray.sort((a, b) => {
+        const dateA = new Date(`${a.date}T${a.time}`);
+        const dateB = new Date(`${b.date}T${b.time}`);
+
+        return dateB - dateA;
+    });
+
+    const recentActivities = activityArray.slice(0, 5);
+    let html = '';
+
+    for (const activity of recentActivities) {
+        html += `
+        <div class="activity-item">
+            <span>${activity.message}</span>
+            <span>${activity.date}</span>
+            <span>${activity.time}</span>
+        </div>
+        `;
+    }
+
+     recentActivityContainer.innerHTML = html;
+}
+
+loadRecentActivities();
+displayRecentActivities(loadRecentActivities());
