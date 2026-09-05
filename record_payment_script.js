@@ -17,6 +17,22 @@ learnersArray.forEach((learner, index) => {
     dropdownList.appendChild(option);
 });
 
+const generateReceiptNumber = () => {
+    const lastReceiptNumber = Number(localStorage.getItem("lastReceiptNumber")) || 0;
+
+    const nextNumber = lastReceiptNumber + 1;
+
+    localStorage.setItem("lastReceiptNumber", nextNumber);
+
+    const date = new Date();
+
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+
+    return `BM-${year}${month}${day}-${String(nextNumber).padStart(4, "0")}`;
+};
+
 const savePayment = (event) => {
     event.preventDefault();
     const paymentMethod = document.querySelector('input[name="payment-method"]:checked');
@@ -39,19 +55,24 @@ const savePayment = (event) => {
 
     const selectedLearner = learnersArray[selectedIndex];
 
+    const receiptNumber = generateReceiptNumber();
+
     const payment = {
         learnerName: `${selectedLearner.firstName} ${selectedLearner.lastName}`,
+        parentName: selectedLearner.parentName,
+        parentPhone: selectedLearner.parentPhone,
         amount,
         date,
         notes,
-        paymentMethod: checkedPaymentMethod
+        paymentMethod: checkedPaymentMethod,
+        receiptNumber
     };
 
     savePayments(payment);
 
     addRecentActivity("payment_recorded", `Payment of ${amount} recorded for ${selectedLearner.firstName} ${selectedLearner.lastName}.`);
 
-    window.location.href = "payments.html";
+    window.location.href = "receipt.html?receiptNumber=" + receiptNumber;
 }
 
 const savePayments = (payment) => {
