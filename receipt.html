@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Payment Receipt | BrightMinds</title>
+        <link rel="stylesheet" href="receipt_styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+        <script src="receipt_script.js" defer></script>
+    </head>
+
+    <body>
+        <div class="receipt">
+
+            <header class="receipt-header">
+                <img src="images/BrightMinds_logo.jpg" alt="BrightMinds Logo">
+
+                <div>
+                    <h1>BrightMinds Extra Classes & Tutoring</h1>
+                    <p>Payment Receipt</p>
+                </div>
+            </header>
+
+
+            <section class="receipt-information">
+
+                <div class="receipt-detail">
+                    <span>Receipt No.</span>
+                    <strong class="receipt-number"></strong>
+                </div>
+
+                <div class="receipt-detail">
+                    <span>Date</span>
+                    <strong class="receipt-date"></strong>
+                </div>
+
+            </section>
+
+
+            <section class="payer-information">
+
+                <h2>Payment From</h2>
+
+                <div class="receipt-detail">
+                    <span>Learner</span>
+                    <strong class="learner-name"></strong>
+                </div>
+
+                <div class="receipt-detail">
+                    <span>Parent/Guardian</span>
+                    <strong class="parent-name"></strong>
+                </div>
+
+                <div class="receipt-detail">
+                    <span>Phone</span>
+                    <strong class="parent-phone"></strong>
+                </div>
+
+            </section>
+
+
+            <section class="payment-information">
+
+                <h2>Payment Details</h2>
+
+                <div class="receipt-detail">
+                    <span>Amount Paid</span>
+                    <strong class="amount-paid"></strong>
+                </div>
+
+                <div class="receipt-detail">
+                    <span>Payment Method</span>
+                    <strong class="payment-method"></strong>
+                </div>
+
+                <div class="receipt-detail">
+                    <span>Notes</span>
+                    <strong class="payment-notes"></strong>
+                </div>
+
+            </section>
+
+
+            <footer class="receipt-footer">
+
+                <p>Thank you for your payment.</p>
+
+                <p>BrightMinds Extra Classes & Tutoring</p>
+
+            </footer>
+
+        </div>
+
+        <div class="receipt-actions">
+            <button type="button" id="download-pdf">Download PDF</button>
+            <button type="button" id="share-receipt">Share Receipt</button>
+        </div>
+
+    </body>
+</html>

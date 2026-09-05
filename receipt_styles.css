@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 40px 20px;
+    color: #222;
+}
+
+.receipt {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.receipt-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #222;
+}
+
+.receipt-header img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.receipt-header h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.receipt-header p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.receipt-information,
+.payer-information,
+.payment-information {
+    padding: 25px 0;
+}
+
+.payer-information,
+.payment-information {
+    border-top: 1px solid #ddd;
+}
+
+.payer-information h2,
+.payment-information h2 {
+    font-size: 16px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   RECEIPT DETAILS
+========================= */
+
+.receipt-detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.receipt-detail span {
+    color: #666;
+}
+
+.receipt-detail strong {
+    text-align: right;
+}
+
+
+/* =========================
+   AMOUNT
+========================= */
+
+.amount-paid {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   PAYMENT METHOD
+========================= */
+
+.payment-method {
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.receipt-footer {
+    border-top: 2px solid #222;
+    padding-top: 25px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.receipt-footer p:first-child {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.receipt-footer p:last-child {
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    .receipt {
+        padding: 25px 20px;
+    }
+
+    .receipt-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .receipt-header h1 {
+        font-size: 20px;
+    }
+
+    .receipt-header p {
+        font-size: 16px;
+    }
+
+    .receipt-detail {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .receipt-detail strong {
+        text-align: left;
+    }
+
+    .amount-paid {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================
+   PRINT / PDF
+========================= */
+
+@media print {
+
+    body {
+        background-color: #ffffff;
+        padding: 0;
+    }
+
+    .receipt {
+        max-width: none;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
+
+.receipt-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#download-pdf {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    background-color: #222;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#download-pdf:hover {
+    opacity: 0.85;
+}
+
+#share-receipt {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007BFF;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#share-receipt:hover {
+    opacity: 0.85;
+}
