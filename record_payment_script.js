@@ -55,8 +55,6 @@ const savePayment = (event) => {
 
     const selectedLearner = learnersArray[selectedIndex];
 
-    const receiptNumber = generateReceiptNumber();
-
     const payment = {
         learnerName: `${selectedLearner.firstName} ${selectedLearner.lastName}`,
         parentName: selectedLearner.parentName,
@@ -65,7 +63,6 @@ const savePayment = (event) => {
         date,
         notes,
         paymentMethod: checkedPaymentMethod,
-        receiptNumber
     };
 
     savePayments(payment);
